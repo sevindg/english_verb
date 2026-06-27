@@ -10,50 +10,24 @@
     <style>
         body { 
             font-family: 'Nunito', sans-serif; 
-            /* Мягкий градиентный фон */
             background-color: #f8fafc;
             background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
                               radial-gradient(at 50% 0%, hsla(225,39%,30%,0.05) 0, transparent 50%), 
                               radial-gradient(at 100% 0%, hsla(339,49%,30%,0.05) 0, transparent 50%);
         }
-        
-        /* Эффект матового стекла для шапки */
         .glass-header {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.6);
         }
-
-        /* Мягкие тени для карточек */
-        .soft-shadow {
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
-        }
-        
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
-        }
-
-        /* Анимации */
+        .soft-shadow { box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05); }
+        .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15); }
         .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeIn { 
-            from { opacity: 0; transform: translateY(15px); } 
-            to { opacity: 1; transform: translateY(0); } 
-        }
-        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
-        @keyframes shake { 
-            10%, 90% { transform: translate3d(-1px, 0, 0); } 
-            20%, 80% { transform: translate3d(2px, 0, 0); } 
-            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); } 
-            40%, 60% { transform: translate3d(4px, 0, 0); } 
-        }
-
-        /* Красивые скроллбары */
+        @keyframes shake { 10%, 90% { transform: translate3d(-1px, 0, 0); } 20%, 80% { transform: translate3d(2px, 0, 0); } 30%, 50%, 70% { transform: translate3d(-4px, 0, 0); } 40%, 60% { transform: translate3d(4px, 0, 0); } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -79,44 +53,32 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-4 mt-8 sm:mt-12">
-        
         <!-- MAIN MENU -->
         <section id="view-home" class="view animate-fade-in text-center">
             <div class="inline-block bg-indigo-50 text-indigo-600 font-bold px-4 py-1.5 rounded-full text-sm mb-6 border border-indigo-100">
                 🚀 Твой путь к идеальному английскому
             </div>
             <h1 class="text-4xl sm:text-5xl font-black mb-5 text-slate-900 tracking-tight">Выбери свой уровень</h1>
-            <p class="text-slate-500 text-lg mb-12 max-w-xl mx-auto">Интерактивный тренажер, который поможет запомнить неправильные глаголы раз и навсегда.</p>
+            <p class="text-slate-500 text-lg mb-12 max-w-xl mx-auto">Интерактивный тренажер, который поможет запомнить 90 неправильных глаголов раз и навсегда.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
-                <!-- Beginner -->
                 <button onclick="selectLevel('beginner')" class="hover-lift bg-white p-8 rounded-[2rem] border-2 border-transparent hover:border-emerald-100 text-left soft-shadow group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 text-2xl shadow-inner">
-                        🌱
-                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6 text-2xl shadow-inner">🌱</div>
                     <h3 class="text-2xl font-extrabold mb-2 text-slate-800">Beginner</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">Базовые глаголы (A1-A2). Основа для простого общения.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed">Самые базовые глаголы для выживания (be, do, have, eat, buy).</p>
                 </button>
-                
-                <!-- Intermediate -->
                 <button onclick="selectLevel('intermediate')" class="hover-lift bg-white p-8 rounded-[2rem] border-2 border-transparent hover:border-amber-100 text-left soft-shadow group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 text-2xl shadow-inner">
-                        🔥
-                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 text-2xl shadow-inner">🔥</div>
                     <h3 class="text-2xl font-extrabold mb-2 text-slate-800">Intermediate</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">Популярные глаголы (B1-B2). Для уверенной речи.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed">Частые глаголы для уверенного общения (build, catch, choose).</p>
                 </button>
-                
-                <!-- Advanced -->
                 <button onclick="selectLevel('advanced')" class="hover-lift bg-white p-8 rounded-[2rem] border-2 border-transparent hover:border-rose-100 text-left soft-shadow group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-rose-50 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6 text-2xl shadow-inner">
-                        💎
-                    </div>
+                    <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6 text-2xl shadow-inner">💎</div>
                     <h3 class="text-2xl font-extrabold mb-2 text-slate-800">Advanced</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">Сложные формы (C1-C2). Для уровня носителя.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed">Сложные формы для уровня носителя (burst, deal, seek, tear).</p>
                 </button>
             </div>
         </section>
@@ -126,27 +88,24 @@
             <button onclick="showView('home')" class="mb-8 text-slate-400 hover:text-indigo-600 transition flex items-center gap-2 font-bold bg-white px-4 py-2 rounded-xl soft-shadow w-max">
                 <i class="fa-solid fa-arrow-left-long"></i> Назад
             </button>
-            
             <div class="text-center mb-10">
                 <h2 id="current-level-title" class="text-4xl font-black uppercase tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-500">Beginner</h2>
                 <p class="text-slate-500 mt-2">Выберите, с чего начать</p>
             </div>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div onclick="showView('dictionary')" class="hover-lift cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-slate-100 hover:border-indigo-200 flex flex-col items-center text-center soft-shadow group relative overflow-hidden">
                     <div class="w-20 h-20 rounded-[2rem] bg-gradient-to-br from-emerald-400 to-teal-500 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-teal-200">
                         <i class="fa-solid fa-book-open text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-extrabold text-slate-800">Словарь</h3>
-                    <p class="text-slate-500 mt-3 font-medium">Изучи формы и примеры с переводом перед игрой.</p>
+                    <p class="text-slate-500 mt-3 font-medium">Изучи 30 глаголов уровня с примерами и переводом.</p>
                 </div>
-                
                 <div onclick="showView('exercises')" class="hover-lift cursor-pointer bg-white p-8 rounded-[2rem] border-2 border-slate-100 hover:border-indigo-200 flex flex-col items-center text-center soft-shadow group relative overflow-hidden">
                     <div class="w-20 h-20 rounded-[2rem] bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-indigo-200">
                         <i class="fa-solid fa-bolt text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-extrabold text-slate-800">Тренировка</h3>
-                    <p class="text-slate-500 mt-3 font-medium">Проверь себя в 4 увлекательных мини-играх.</p>
+                    <p class="text-slate-500 mt-3 font-medium">Проверь себя в 6 увлекательных мини-играх.</p>
                 </div>
             </div>
         </section>
@@ -158,10 +117,7 @@
                     <i class="fa-solid fa-arrow-left-long"></i> В меню
                 </button>
             </div>
-            
-            <div id="dictionary-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Карточки генерируются через JS -->
-            </div>
+            <div id="dictionary-content" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
         </section>
 
         <!-- EXERCISES MENU -->
@@ -169,29 +125,40 @@
              <button onclick="showView('menu')" class="mb-8 text-slate-400 hover:text-indigo-600 transition flex items-center gap-2 font-bold bg-white px-4 py-2 rounded-xl soft-shadow w-max">
                 <i class="fa-solid fa-arrow-left-long"></i> Назад
             </button>
-            
             <h2 class="text-3xl font-black mb-8 text-center text-slate-800">Режимы тренировки</h2>
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <button onclick="startGame('fill_forms')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-indigo-300 soft-shadow group text-left">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-100 transition-colors">✍️</div>
                     <h4 class="font-extrabold text-xl text-slate-800 mb-1">Впиши форму</h4>
                     <p class="text-slate-500 font-medium">Напиши V2 и V3 по первой форме</p>
                 </button>
-                
                 <button onclick="startGame('fill_gap')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-indigo-300 soft-shadow group text-left">
                     <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-orange-100 transition-colors">🧩</div>
                     <h4 class="font-extrabold text-xl text-slate-800 mb-1">Заполни пропуск</h4>
                     <p class="text-slate-500 font-medium">Выбери нужную форму по контексту</p>
                 </button>
-                
                 <button onclick="startGame('match')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-indigo-300 soft-shadow group text-left">
                     <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-pink-100 transition-colors">🔗</div>
                     <h4 class="font-extrabold text-xl text-slate-800 mb-1">Найди пару</h4>
-                    <p class="text-slate-500 font-medium">Соедини глагол и его перевод</p>
+                    <p class="text-slate-500 font-medium">Соедини перевод и ЛЮБУЮ форму глагола</p>
                 </button>
-                
-                <button onclick="startGame('translate')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-indigo-300 soft-shadow group text-left">
+                <button onclick="startGame('match_forms')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-purple-300 soft-shadow group text-left relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-100 transition-colors">🔀</div>
+                    <h4 class="font-extrabold text-xl text-slate-800 mb-1 flex items-center gap-2">
+                        Все формы
+                        <span class="bg-rose-500 text-white text-[10px] uppercase px-2 py-0.5 rounded-full shadow-sm animate-pulse">New</span>
+                    </h4>
+                    <p class="text-slate-500 font-medium">Собери формы V1, V2, V3 и перевод</p>
+                </button>
+                <button onclick="startGame('group_forms')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-teal-300 soft-shadow group text-left relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-teal-100 transition-colors">🗂️</div>
+                    <h4 class="font-extrabold text-xl text-slate-800 mb-1 flex items-center gap-2">
+                        По группам
+                        <span class="bg-rose-500 text-white text-[10px] uppercase px-2 py-0.5 rounded-full shadow-sm animate-pulse">New</span>
+                    </h4>
+                    <p class="text-slate-500 font-medium">Раздели глаголы по колонкам V1, V2 и V3</p>
+                </button>
+                <button onclick="startGame('translate')" class="hover-lift flex flex-col items-start p-6 bg-white rounded-3xl border-2 border-slate-100 hover:border-emerald-300 soft-shadow group text-left">
                     <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl mb-4 group-hover:bg-emerald-100 transition-colors">🇷🇺</div>
                     <h4 class="font-extrabold text-xl text-slate-800 mb-1">Перевод</h4>
                     <p class="text-slate-500 font-medium">Выбери правильную тройку форм</p>
@@ -200,7 +167,7 @@
         </section>
 
         <!-- GAME ZONE -->
-        <section id="view-game" class="view hidden animate-fade-in max-w-xl mx-auto">
+        <section id="view-game" class="view hidden animate-fade-in max-w-2xl mx-auto">
             <div class="flex justify-between items-center mb-8 bg-white p-3 rounded-2xl soft-shadow border border-slate-100">
                 <button onclick="showView('exercises')" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-rose-50 hover:text-rose-500 transition text-lg font-bold">
                     <i class="fa-solid fa-xmark"></i>
@@ -210,20 +177,15 @@
                 </div>
                 <span id="game-step" class="text-sm font-extrabold text-indigo-500 bg-indigo-50 px-3 py-1.5 rounded-xl">1/10</span>
             </div>
-
             <div id="game-content" class="bg-white p-6 sm:p-10 rounded-[2.5rem] border border-slate-100 soft-shadow transition-colors duration-300 relative overflow-hidden">
-                <!-- Контент игры -->
             </div>
         </section>
 
         <!-- RESULTS -->
         <section id="view-results" class="view hidden animate-fade-in text-center py-10 max-w-md mx-auto">
-            <div class="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center text-6xl shadow-xl shadow-orange-200 mb-8 animate-bounce">
-                🏆
-            </div>
+            <div class="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center text-6xl shadow-xl shadow-orange-200 mb-8 animate-bounce">🏆</div>
             <h2 class="text-4xl font-black mb-3 text-slate-800">Отличная работа!</h2>
             <p class="text-slate-500 font-medium mb-10">Твой словарный запас стал еще богаче.</p>
-            
             <div class="grid grid-cols-2 gap-4 mb-10">
                 <div class="bg-emerald-50 border-2 border-emerald-100 text-emerald-600 px-6 py-5 rounded-3xl">
                     <div class="text-4xl font-black mb-1" id="res-correct">0</div>
@@ -234,113 +196,291 @@
                     <div class="text-xs font-bold uppercase tracking-widest opacity-80">Ошибки</div>
                 </div>
             </div>
-
             <div class="flex flex-col gap-4">
                 <button onclick="showView('exercises')" class="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-extrabold text-lg rounded-2xl hover:opacity-90 transition shadow-lg shadow-indigo-200 hover:-translate-y-1">Играть снова</button>
                 <button onclick="showView('home')" class="w-full py-4 bg-white border-2 border-slate-200 text-slate-600 font-bold rounded-2xl hover:border-slate-300 transition">Сменить уровень</button>
             </div>
         </section>
-
     </main>
 
     <script>
-        // --- DATA BASE (с примерами) ---
+        // --- DATA BASE (90 глаголов, по 3 уникальных gaps для каждого = 270 предложений) ---
         const verbDB = {
             beginner: [
-                { v1: "be", v2: "was/were", v3: "been", ru: "быть", gapAnswer: "was/were", sentence: "I ___ at home yesterday.", wrong: ["am", "beed", "is"], examples: [{en:"I want to be a doctor.", ru:"Я хочу быть врачом."}, {en:"I was at home.", ru:"Я был дома."}, {en:"Have you been there?", ru:"Ты там был?"}] },
-                { v1: "have", v2: "had", v3: "had", ru: "иметь", gapAnswer: "had", sentence: "She ___ a dog when she was a kid.", wrong: ["haved", "has", "haven"], examples: [{en:"I have a car.", ru:"У меня есть машина."}, {en:"She had a dog.", ru:"У неё была собака."}, {en:"I have had it for years.", ru:"Оно у меня годами."}] },
-                { v1: "do", v2: "did", v3: "done", ru: "делать", gapAnswer: "did", sentence: "I ___ my homework last night.", wrong: ["doed", "done", "does"], examples: [{en:"I do it every day.", ru:"Я делаю это каждый день."}, {en:"I did my homework.", ru:"Я сделал домашнее задание."}, {en:"Have you done it?", ru:"Ты сделал это?"}] },
-                { v1: "go", v2: "went", v3: "gone", ru: "идти", gapAnswer: "went", sentence: "We ___ to the park on Sunday.", wrong: ["goed", "gone", "goes"], examples: [{en:"I go to school.", ru:"Я хожу в школу."}, {en:"We went to the park.", ru:"Мы ходили в парк."}, {en:"He has gone home.", ru:"Он ушел домой."}] },
-                { v1: "say", v2: "said", v3: "said", ru: "сказать", gapAnswer: "said", sentence: "He ___ hello to me.", wrong: ["sayed", "says", "saden"], examples: [{en:"Please say it.", ru:"Пожалуйста, скажи это."}, {en:"He said hello.", ru:"Он поздоровался."}, {en:"She has said nothing.", ru:"Она ничего не сказала."}] },
-                { v1: "make", v2: "made", v3: "made", ru: "создавать/делать", gapAnswer: "made", sentence: "She ___ a delicious cake.", wrong: ["maked", "maken", "makes"], examples: [{en:"I can make a cake.", ru:"Я могу испечь торт."}, {en:"She made a cake.", ru:"Она приготовила торт."}, {en:"He has made a mistake.", ru:"Он совершил ошибку."}] },
-                { v1: "take", v2: "took", v3: "taken", ru: "брать", gapAnswer: "took", sentence: "I ___ an umbrella because of the rain.", wrong: ["taked", "taken", "takes"], examples: [{en:"Take this book.", ru:"Возьми эту книгу."}, {en:"I took an umbrella.", ru:"Я взял зонт."}, {en:"Someone has taken it.", ru:"Кто-то взял это."}] },
-                { v1: "see", v2: "saw", v3: "seen", ru: "видеть", gapAnswer: "saw", sentence: "We ___ a great movie yesterday.", wrong: ["seed", "seen", "sees"], examples: [{en:"I see a bird.", ru:"Я вижу птицу."}, {en:"We saw a movie.", ru:"Мы посмотрели фильм."}, {en:"I haven't seen him.", ru:"Я не видел его."}] },
-                { v1: "come", v2: "came", v3: "come", ru: "приходить", gapAnswer: "came", sentence: "He ___ to the party late.", wrong: ["comed", "comes", "coming"], examples: [{en:"Come here.", ru:"Иди сюда."}, {en:"He came late.", ru:"Он пришел поздно."}, {en:"She has just come.", ru:"Она только что пришла."}] },
-                { v1: "get", v2: "got", v3: "got", ru: "получать", gapAnswer: "got", sentence: "I ___ a new phone for my birthday.", wrong: ["getted", "gotten", "gets"], examples: [{en:"I want to get it.", ru:"Я хочу получить это."}, {en:"I got a new phone.", ru:"Я получил новый телефон."}, {en:"He has got a cold.", ru:"Он простудился."}] },
-                { v1: "know", v2: "knew", v3: "known", ru: "знать", gapAnswer: "knew", sentence: "I ___ the answer.", wrong: ["knowed", "known", "knows"], examples: [{en:"I know his name.", ru:"Я знаю его имя."}, {en:"I knew it.", ru:"Я знал это."}, {en:"I have known her for years.", ru:"Я знаю её годами."}] },
-                { v1: "think", v2: "thought", v3: "thought", ru: "думать", gapAnswer: "thought", sentence: "I ___ it was a good idea.", wrong: ["thinked", "thinken", "thinks"], examples: [{en:"I think so.", ru:"Я так думаю."}, {en:"I thought about it.", ru:"Я думал об этом."}, {en:"I have thought of a plan.", ru:"Я придумал план."}] },
-                { v1: "tell", v2: "told", v3: "told", ru: "рассказывать", gapAnswer: "told", sentence: "She ___ me a story.", wrong: ["telled", "tollen", "tells"], examples: [{en:"Tell me the truth.", ru:"Скажи мне правду."}, {en:"He told me a joke.", ru:"Он рассказал мне шутку."}, {en:"I have already told him.", ru:"Я уже сказал ему."}] },
-                { v1: "become", v2: "became", v3: "become", ru: "становиться", gapAnswer: "became", sentence: "He ___ a doctor.", wrong: ["becomed", "become", "becomes"], examples: [{en:"I want to become a pilot.", ru:"Я хочу стать пилотом."}, {en:"He became famous.", ru:"Он стал знаменитым."}, {en:"It has become cold.", ru:"Стало холодно."}] },
-                { v1: "show", v2: "showed", v3: "shown", ru: "показывать", gapAnswer: "showed", sentence: "She ___ me her dress.", wrong: ["shown", "showes", "shew"], examples: [{en:"Show me your ticket.", ru:"Покажи мне свой билет."}, {en:"He showed me the way.", ru:"Он показал мне дорогу."}, {en:"He has shown great results.", ru:"Он показал отличные результаты."}] },
-                { v1: "leave", v2: "left", v3: "left", ru: "покидать/оставлять", gapAnswer: "left", sentence: "I ___ my keys at home.", wrong: ["leaved", "leaves", "loft"], examples: [{en:"Leave me alone.", ru:"Оставь меня в покое."}, {en:"He left early.", ru:"Он ушёл рано."}, {en:"They have just left.", ru:"Они только что ушли."}] },
-                { v1: "put", v2: "put", v3: "put", ru: "класть/ставить", gapAnswer: "put", sentence: "He ___ the book on the table.", wrong: ["putted", "puts", "pat"], examples: [{en:"Put it here.", ru:"Положи это сюда."}, {en:"She put on her coat.", ru:"Она надела пальто."}, {en:"Where have you put it?", ru:"Куда ты это положил?"}] },
-                { v1: "begin", v2: "began", v3: "begun", ru: "начинать", gapAnswer: "began", sentence: "The movie ___ at 8.", wrong: ["beginned", "begun", "begins"], examples: [{en:"Let's begin.", ru:"Давайте начнём."}, {en:"It began to rain.", ru:"Начался дождь."}, {en:"The show has begun.", ru:"Шоу началось."}] },
-                { v1: "keep", v2: "kept", v3: "kept", ru: "хранить/продолжать", gapAnswer: "kept", sentence: "She ___ the secret.", wrong: ["keeped", "keepen", "keeps"], examples: [{en:"Keep your room clean.", ru:"Держи комнату в чистоте."}, {en:"He kept walking.", ru:"Он продолжал идти."}, {en:"I have kept my promise.", ru:"Я сдержал своё обещание."}] },
-                { v1: "hold", v2: "held", v3: "held", ru: "держать", gapAnswer: "held", sentence: "He ___ my hand.", wrong: ["holded", "holden", "holds"], examples: [{en:"Hold the door.", ru:"Придержи дверь."}, {en:"She held the baby.", ru:"Она держала ребёнка."}, {en:"They have held a meeting.", ru:"Они провели собрание."}] },
-                { v1: "write", v2: "wrote", v3: "written", ru: "писать", gapAnswer: "wrote", sentence: "I ___ a letter to my friend.", wrong: ["writed", "written", "writes"], examples: [{en:"Write your name here.", ru:"Напиши своё имя здесь."}, {en:"He wrote a book.", ru:"Он написал книгу."}, {en:"I have written three pages.", ru:"Я написал три страницы."}] },
-                { v1: "stand", v2: "stood", v3: "stood", ru: "стоять", gapAnswer: "stood", sentence: "He ___ up and left.", wrong: ["standed", "standen", "stands"], examples: [{en:"Stand up, please.", ru:"Встаньте, пожалуйста."}, {en:"She stood by the window.", ru:"Она стояла у окна."}, {en:"We have stood here for an hour.", ru:"Мы простояли здесь час."}] },
-                { v1: "hear", v2: "heard", v3: "heard", ru: "слышать", gapAnswer: "heard", sentence: "I ___ a strange noise.", wrong: ["heared", "hearen", "hears"], examples: [{en:"I can't hear you.", ru:"Я тебя не слышу."}, {en:"I heard the news.", ru:"Я слышал новости."}, {en:"Have you heard about it?", ru:"Ты слышал об этом?"}] },
-                { v1: "let", v2: "let", v3: "let", ru: "позволять", gapAnswer: "let", sentence: "My mom ___ me go to the party.", wrong: ["letted", "lets", "lat"], examples: [{en:"Let me try.", ru:"Дай мне попробовать."}, {en:"He let the dog out.", ru:"Он выпустил собаку."}, {en:"They have let him go.", ru:"Они позволили ему уйти."}] },
-                { v1: "mean", v2: "meant", v3: "meant", ru: "иметь в виду/означать", gapAnswer: "meant", sentence: "I didn't know what it ___.", wrong: ["meaned", "meanen", "means"], examples: [{en:"What does it mean?", ru:"Что это значит?"}, {en:"I meant it as a joke.", ru:"Я сказал это в шутку."}, {en:"It has always meant a lot.", ru:"Это всегда много значило."}] },
-                { v1: "set", v2: "set", v3: "set", ru: "устанавливать", gapAnswer: "set", sentence: "He ___ the alarm clock.", wrong: ["setted", "sets", "sat"], examples: [{en:"Set the table.", ru:"Накрой на стол."}, {en:"The sun set.", ru:"Солнце село."}, {en:"I have set a new goal.", ru:"Я поставил новую цель."}] },
-                { v1: "meet", v2: "met", v3: "met", ru: "встречать", gapAnswer: "met", sentence: "We ___ at the station.", wrong: ["meeted", "meeten", "meets"], examples: [{en:"Nice to meet you.", ru:"Приятно познакомиться."}, {en:"I met her yesterday.", ru:"Я встретил её вчера."}, {en:"We have just met.", ru:"Мы только что познакомились."}] },
-                { v1: "run", v2: "ran", v3: "run", ru: "бежать", gapAnswer: "ran", sentence: "The dog ___ away.", wrong: ["runned", "run", "runs"], examples: [{en:"I run every morning.", ru:"Я бегаю каждое утро."}, {en:"He ran very fast.", ru:"Он бежал очень быстро."}, {en:"She has run a marathon.", ru:"Она пробежала марафон."}] },
-                { v1: "sit", v2: "sat", v3: "sat", ru: "сидеть", gapAnswer: "sat", sentence: "She ___ on the chair.", wrong: ["sitted", "sitten", "sits"], examples: [{en:"Sit down, please.", ru:"Садитесь, пожалуйста."}, {en:"He sat on the grass.", ru:"Он сидел на траве."}, {en:"I have sat here all day.", ru:"Я просидел здесь весь день."}] },
-                { v1: "speak", v2: "spoke", v3: "spoken", ru: "говорить", gapAnswer: "spoke", sentence: "He ___ English very well.", wrong: ["speaked", "spoken", "speaks"], examples: [{en:"Can you speak louder?", ru:"Можешь говорить громче?"}, {en:"She spoke to the manager.", ru:"Она поговорила с менеджером."}, {en:"They have spoken about it.", ru:"Они уже говорили об этом."}] }
+                { v1: "be", v2: "was/were", v3: "been", ru: "быть", 
+                  gaps: [ {s: "She ___ at home yesterday.", a: "was", w: ["is", "been", "were"]}, {s: "They have never ___ to Paris.", a: "been", w: ["was", "be", "were"]}, {s: "We ___ very happy last night.", a: "were", w: ["was", "been", "are"]} ],
+                  examples: [{en:"I want to be a doctor.", ru:"Я хочу быть врачом."}, {en:"I was at home.", ru:"Я был дома."}, {en:"Have you been there?", ru:"Ты там был?"}] },
+                { v1: "have", v2: "had", v3: "had", ru: "иметь", 
+                  gaps: [ {s: "I ___ a dog in my childhood.", a: "had", w: ["have", "has", "haven"]}, {s: "She has already ___ breakfast.", a: "had", w: ["have", "has", "haven"]}, {s: "They ___ a great time yesterday.", a: "had", w: ["have", "has", "haved"]} ],
+                  examples: [{en:"I have a car.", ru:"У меня есть машина."}, {en:"She had a dog.", ru:"У неё была собака."}, {en:"I've had it for years.", ru:"Оно у меня годами."}] },
+                { v1: "do", v2: "did", v3: "done", ru: "делать", 
+                  gaps: [ {s: "He ___ his work well yesterday.", a: "did", w: ["done", "does", "doed"]}, {s: "I have already ___ my homework.", a: "done", w: ["did", "does", "doing"]}, {s: "She ___ nothing all day long.", a: "did", w: ["done", "does", "do"]} ],
+                  examples: [{en:"I do it every day.", ru:"Я делаю это каждый день."}, {en:"I did my homework.", ru:"Я сделал домашнее задание."}, {en:"Have you done it?", ru:"Ты сделал это?"}] },
+                { v1: "go", v2: "went", v3: "gone", ru: "идти/ехать", 
+                  gaps: [ {s: "We ___ to the park on Sunday.", a: "went", w: ["gone", "goed", "goes"]}, {s: "He has already ___ home.", a: "gone", w: ["went", "goed", "go"]}, {s: "They ___ to the cinema last night.", a: "went", w: ["gone", "goes", "go"]} ],
+                  examples: [{en:"I go to school.", ru:"Я хожу в школу."}, {en:"We went to the park.", ru:"Мы ходили в парк."}, {en:"He has gone home.", ru:"Он ушел домой."}] },
+                { v1: "say", v2: "said", v3: "said", ru: "говорить (сказать)", 
+                  gaps: [ {s: "He ___ hello to me.", a: "said", w: ["sayed", "says", "saden"]}, {s: "She has not ___ a word.", a: "said", w: ["sayed", "say", "says"]}, {s: "They ___ it was a good idea.", a: "said", w: ["say", "sayed", "says"]} ],
+                  examples: [{en:"Please say it.", ru:"Пожалуйста, скажи это."}, {en:"He said hello.", ru:"Он поздоровался."}, {en:"She has said nothing.", ru:"Она ничего не сказала."}] },
+                { v1: "make", v2: "made", v3: "made", ru: "создавать", 
+                  gaps: [ {s: "She ___ a delicious cake yesterday.", a: "made", w: ["maked", "maken", "makes"]}, {s: "I have ___ a big mistake.", a: "made", w: ["maked", "maken", "make"]}, {s: "He ___ me laugh.", a: "made", w: ["maked", "makes", "maken"]} ],
+                  examples: [{en:"I can make a cake.", ru:"Я могу испечь торт."}, {en:"She made a cake.", ru:"Она приготовила торт."}, {en:"He has made a mistake.", ru:"Он совершил ошибку."}] },
+                { v1: "take", v2: "took", v3: "taken", ru: "брать", 
+                  gaps: [ {s: "I ___ an umbrella because it rained.", a: "took", w: ["taken", "taked", "takes"]}, {s: "Someone has ___ my pen.", a: "taken", w: ["took", "taked", "take"]}, {s: "She ___ the kids to school.", a: "took", w: ["taken", "taked", "takes"]} ],
+                  examples: [{en:"Take this book.", ru:"Возьми эту книгу."}, {en:"I took an umbrella.", ru:"Я взял зонт."}, {en:"Someone has taken it.", ru:"Кто-то взял это."}] },
+                { v1: "see", v2: "saw", v3: "seen", ru: "видеть", 
+                  gaps: [ {s: "We ___ a great movie yesterday.", a: "saw", w: ["seen", "seed", "sees"]}, {s: "I haven't ___ him today.", a: "seen", w: ["saw", "seed", "see"]}, {s: "She ___ her friend at the mall.", a: "saw", w: ["seen", "sees", "seed"]} ],
+                  examples: [{en:"I see a bird.", ru:"Я вижу птицу."}, {en:"We saw a movie.", ru:"Мы посмотрели фильм."}, {en:"I haven't seen him.", ru:"Я не видел его."}] },
+                { v1: "come", v2: "came", v3: "come", ru: "приходить", 
+                  gaps: [ {s: "He ___ to the party late.", a: "came", w: ["come", "comed", "comes"]}, {s: "Has she ___ back yet?", a: "come", w: ["came", "comed", "comes"]}, {s: "They ___ to visit us on Sunday.", a: "came", w: ["come", "comed", "coming"]} ],
+                  examples: [{en:"Come here.", ru:"Иди сюда."}, {en:"He came late.", ru:"Он пришел поздно."}, {en:"She has just come.", ru:"Она только что пришла."}] },
+                { v1: "get", v2: "got", v3: "got", ru: "получать", 
+                  gaps: [ {s: "I ___ a new phone for my birthday.", a: "got", w: ["getted", "gotten", "gets"]}, {s: "He has ___ a bad cold.", a: "got", w: ["get", "getted", "getting"]}, {s: "She ___ an email from him.", a: "got", w: ["getted", "get", "gets"]} ],
+                  examples: [{en:"I want to get it.", ru:"Я хочу получить это."}, {en:"I got a new phone.", ru:"Я получил новый телефон."}, {en:"He has got a cold.", ru:"Он простудился."}] },
+                { v1: "give", v2: "gave", v3: "given", ru: "давать", 
+                  gaps: [ {s: "She ___ me a nice present.", a: "gave", w: ["given", "gived", "gives"]}, {s: "I have ___ up smoking.", a: "given", w: ["gave", "gived", "give"]}, {s: "He ___ her a ring.", a: "gave", w: ["given", "gived", "gives"]} ],
+                  examples: [{en:"Give me a pen.", ru:"Дай мне ручку."}, {en:"She gave me a gift.", ru:"Она дала мне подарок."}, {en:"I have given up.", ru:"Я сдался."}] },
+                { v1: "know", v2: "knew", v3: "known", ru: "знать", 
+                  gaps: [ {s: "I ___ the answer to that question.", a: "knew", w: ["known", "knowed", "knows"]}, {s: "I have ___ her for 5 years.", a: "known", w: ["knew", "knowed", "know"]}, {s: "He ___ exactly what to do.", a: "knew", w: ["known", "knows", "knowed"]} ],
+                  examples: [{en:"I know his name.", ru:"Я знаю его имя."}, {en:"I knew it.", ru:"Я знал это."}, {en:"I have known her for years.", ru:"Я знаю её годами."}] },
+                { v1: "think", v2: "thought", v3: "thought", ru: "думать", 
+                  gaps: [ {s: "I ___ it was a good idea.", a: "thought", w: ["thinked", "thinken", "thinks"]}, {s: "Have you ___ about my offer?", a: "thought", w: ["thinked", "think", "thinks"]}, {s: "She ___ he was right.", a: "thought", w: ["thinked", "think", "thinks"]} ],
+                  examples: [{en:"I think so.", ru:"Я так думаю."}, {en:"I thought about it.", ru:"Я думал об этом."}, {en:"I have thought of a plan.", ru:"Я придумал план."}] },
+                { v1: "tell", v2: "told", v3: "told", ru: "говорить (рассказывать)", 
+                  gaps: [ {s: "She ___ me a funny story.", a: "told", w: ["telled", "tollen", "tells"]}, {s: "I have already ___ him everything.", a: "told", w: ["telled", "tell", "tells"]}, {s: "He ___ the truth.", a: "told", w: ["telled", "tell", "tells"]} ],
+                  examples: [{en:"Tell me the truth.", ru:"Скажи мне правду."}, {en:"He told me a joke.", ru:"Он рассказал мне шутку."}, {en:"I have already told him.", ru:"Я уже сказал ему."}] },
+                { v1: "find", v2: "found", v3: "found", ru: "находить", 
+                  gaps: [ {s: "I ___ my lost keys yesterday.", a: "found", w: ["finded", "finden", "finds"]}, {s: "She has ___ a new job.", a: "found", w: ["finded", "find", "finden"]}, {s: "They ___ the dog in the park.", a: "found", w: ["finded", "find", "finds"]} ],
+                  examples: [{en:"Find your way.", ru:"Найди свой путь."}, {en:"I found my keys.", ru:"Я нашел ключи."}, {en:"I have found peace.", ru:"Я обрел покой."}] },
+                { v1: "leave", v2: "left", v3: "left", ru: "уходить/оставлять", 
+                  gaps: [ {s: "He ___ early this morning.", a: "left", w: ["leaved", "leaves", "loft"]}, {s: "They have just ___ the building.", a: "left", w: ["leaved", "leave", "leaves"]}, {s: "I ___ my phone at home.", a: "left", w: ["leaved", "leave", "loft"]} ],
+                  examples: [{en:"Leave me alone.", ru:"Оставь меня в покое."}, {en:"He left early.", ru:"Он ушёл рано."}, {en:"They have just left.", ru:"Они только что ушли."}] },
+                { v1: "feel", v2: "felt", v3: "felt", ru: "ощущать", 
+                  gaps: [ {s: "I ___ very sick yesterday.", a: "felt", w: ["feeled", "fallen", "feels"]}, {s: "She has never ___ so happy.", a: "felt", w: ["feeled", "feel", "feels"]}, {s: "He ___ a sharp pain.", a: "felt", w: ["feeled", "feel", "feels"]} ],
+                  examples: [{en:"I feel good.", ru:"Я чувствую себя хорошо."}, {en:"She felt tired.", ru:"Она чувствовала усталость."}, {en:"He has felt better.", ru:"Ему стало лучше."}] },
+                { v1: "put", v2: "put", v3: "put", ru: "класть", 
+                  gaps: [ {s: "He ___ the book on the table.", a: "put", w: ["putted", "puts", "pat"]}, {s: "Where have you ___ my keys?", a: "put", w: ["putted", "puts", "pat"]}, {s: "She ___ on her coat and left.", a: "put", w: ["putted", "puts", "pat"]} ],
+                  examples: [{en:"Put it here.", ru:"Положи это сюда."}, {en:"She put on her coat.", ru:"Она надела пальто."}, {en:"Where have you put it?", ru:"Куда ты это положил?"}] },
+                { v1: "bring", v2: "brought", v3: "brought", ru: "приносить", 
+                  gaps: [ {s: "I ___ some snacks to the party.", a: "brought", w: ["bringed", "brang", "brings"]}, {s: "Has he ___ the documents?", a: "brought", w: ["bringed", "brang", "bring"]}, {s: "She ___ a friend with her.", a: "brought", w: ["bringed", "brang", "brings"]} ],
+                  examples: [{en:"Bring me a cup.", ru:"Принеси мне чашку."}, {en:"I brought snacks.", ru:"Я принес закуски."}, {en:"She has brought news.", ru:"Она принесла новости."}] },
+                { v1: "buy", v2: "bought", v3: "bought", ru: "покупать", 
+                  gaps: [ {s: "He ___ a new laptop last week.", a: "bought", w: ["buyed", "boughten", "buys"]}, {s: "I have just ___ tickets for the concert.", a: "bought", w: ["buyed", "buy", "buys"]}, {s: "They ___ a house in the suburbs.", a: "bought", w: ["buyed", "buy", "buys"]} ],
+                  examples: [{en:"I want to buy a house.", ru:"Я хочу купить дом."}, {en:"She bought a dress.", ru:"Она купила платье."}, {en:"Have you bought tickets?", ru:"Ты купил билеты?"}] },
+                { v1: "eat", v2: "ate", v3: "eaten", ru: "питаться/кушать", 
+                  gaps: [ {s: "We ___ pizza for dinner.", a: "ate", w: ["eated", "eaten", "eats"]}, {s: "I have already ___.", a: "eaten", w: ["ate", "eated", "eat"]}, {s: "She ___ a lot of candies yesterday.", a: "ate", w: ["eaten", "eated", "eats"]} ],
+                  examples: [{en:"I eat an apple every day.", ru:"Я ем яблоко каждый день."}, {en:"We ate pizza.", ru:"Мы ели пиццу."}, {en:"I have already eaten.", ru:"Я уже поел."}] },
+                { v1: "drink", v2: "drank", v3: "drunk", ru: "пить", 
+                  gaps: [ {s: "I ___ too much coffee today.", a: "drank", w: ["drunk", "drinked", "drinks"]}, {s: "He has ___ all the juice.", a: "drunk", w: ["drank", "drinked", "drink"]}, {s: "She ___ a glass of water.", a: "drank", w: ["drunk", "drinked", "drinks"]} ],
+                  examples: [{en:"I drink water.", ru:"Я пью воду."}, {en:"I drank coffee.", ru:"Я выпил кофе."}, {en:"He has drunk juice.", ru:"Он выпил сок."}] },
+                { v1: "read", v2: "read", v3: "read", ru: "читать", 
+                  gaps: [ {s: "I ___ a great book yesterday.", a: "read", w: ["readed", "reads", "red"]}, {s: "She has already ___ this article.", a: "read", w: ["readed", "reading", "reads"]}, {s: "They ___ the news this morning.", a: "read", w: ["readed", "reads", "red"]} ],
+                  examples: [{en:"I read every day.", ru:"Я читаю каждый день."}, {en:"I read a book yesterday.", ru:"Я прочитал книгу вчера."}, {en:"I have read this article.", ru:"Я прочитал эту статью."}] },
+                { v1: "write", v2: "wrote", v3: "written", ru: "писать", 
+                  gaps: [ {s: "He ___ a letter to his friend.", a: "wrote", w: ["written", "writed", "writes"]}, {s: "I have ___ three pages so far.", a: "written", w: ["wrote", "writed", "write"]}, {s: "She ___ her name on the board.", a: "wrote", w: ["written", "writed", "writes"]} ],
+                  examples: [{en:"Write your name.", ru:"Напиши своё имя."}, {en:"He wrote a book.", ru:"Он написал книгу."}, {en:"I have written it.", ru:"Я написал это."}] },
+                { v1: "speak", v2: "spoke", v3: "spoken", ru: "говорить", 
+                  gaps: [ {s: "He ___ English very well.", a: "spoke", w: ["spoken", "speaked", "speaks"]}, {s: "We have not ___ about it yet.", a: "spoken", w: ["spoke", "speaked", "speak"]}, {s: "She ___ to the manager.", a: "spoke", w: ["spoken", "speaked", "speaks"]} ],
+                  examples: [{en:"Can you speak louder?", ru:"Можешь говорить громче?"}, {en:"She spoke fast.", ru:"Она говорила быстро."}, {en:"They have spoken.", ru:"Они поговорили."}] },
+                { v1: "hear", v2: "heard", v3: "heard", ru: "слышать", 
+                  gaps: [ {s: "I ___ a strange noise outside.", a: "heard", w: ["heared", "hearen", "hears"]}, {s: "Have you ___ the news?", a: "heard", w: ["heared", "hear", "hears"]}, {s: "She ___ him knocking.", a: "heard", w: ["heared", "hear", "hears"]} ],
+                  examples: [{en:"I can't hear you.", ru:"Я тебя не слышу."}, {en:"I heard the news.", ru:"Я слышал новости."}, {en:"Have you heard?", ru:"Ты слышал?"}] },
+                { v1: "run", v2: "ran", v3: "run", ru: "бежать", 
+                  gaps: [ {s: "The dog ___ away quickly.", a: "ran", w: ["runned", "run", "runs"]}, {s: "She has ___ a marathon.", a: "run", w: ["ran", "runned", "runs"]}, {s: "He ___ to catch the bus.", a: "ran", w: ["runned", "run", "runs"]} ],
+                  examples: [{en:"I run every morning.", ru:"Я бегаю каждое утро."}, {en:"He ran very fast.", ru:"Он бежал очень быстро."}, {en:"She has run a marathon.", ru:"Она пробежала марафон."}] },
+                { v1: "sleep", v2: "slept", v3: "slept", ru: "спать", 
+                  gaps: [ {s: "I ___ for 8 hours last night.", a: "slept", w: ["sleeped", "sleeps", "slap"]}, {s: "He hasn't ___ well lately.", a: "slept", w: ["sleeped", "sleep", "sleeps"]}, {s: "She ___ on the couch.", a: "slept", w: ["sleeped", "sleeps", "slap"]} ],
+                  examples: [{en:"I sleep well.", ru:"Я сплю хорошо."}, {en:"She slept here.", ru:"Она спала здесь."}, {en:"He hasn't slept yet.", ru:"Он ещё не спал."}] },
+                { v1: "sit", v2: "sat", v3: "sat", ru: "сидеть", 
+                  gaps: [ {s: "She ___ on the chair.", a: "sat", w: ["sitted", "sitten", "sits"]}, {s: "I have ___ here all day.", a: "sat", w: ["sitted", "sit", "sits"]}, {s: "They ___ quietly in the room.", a: "sat", w: ["sitted", "sitten", "sits"]} ],
+                  examples: [{en:"Sit down, please.", ru:"Садитесь, пожалуйста."}, {en:"He sat on the grass.", ru:"Он сидел на траве."}, {en:"I have sat here all day.", ru:"Я просидел здесь весь день."}] },
+                { v1: "stand", v2: "stood", v3: "stood", ru: "стоять", 
+                  gaps: [ {s: "He ___ up and left.", a: "stood", w: ["standed", "standen", "stands"]}, {s: "We have ___ here for an hour.", a: "stood", w: ["standed", "stand", "stands"]}, {s: "She ___ by the window.", a: "stood", w: ["standed", "standen", "stands"]} ],
+                  examples: [{en:"Stand up.", ru:"Встаньте."}, {en:"She stood by the window.", ru:"Она стояла у окна."}, {en:"We have stood here for an hour.", ru:"Мы простояли здесь час."}] }
             ],
             intermediate: [
-                { v1: "eat", v2: "ate", v3: "eaten", ru: "кушать", gapAnswer: "ate", sentence: "We ___ pizza for dinner.", wrong: ["eated", "eaten", "eats"], examples: [{en:"I eat an apple every day.", ru:"Я ем яблоко каждый день."}, {en:"We ate pizza.", ru:"Мы ели пиццу."}, {en:"I have already eaten.", ru:"Я уже поел."}] },
-                { v1: "drink", v2: "drank", v3: "drunk", ru: "пить", gapAnswer: "drank", sentence: "I ___ too much coffee today.", wrong: ["drinked", "drunk", "drinks"], examples: [{en:"I drink water.", ru:"Я пью воду."}, {en:"I drank coffee.", ru:"Я выпил кофе."}, {en:"He has drunk juice.", ru:"Он выпил сок."}] },
-                { v1: "drive", v2: "drove", v3: "driven", ru: "водить", gapAnswer: "drove", sentence: "He ___ the car very fast.", wrong: ["drived", "driven", "drives"], examples: [{en:"I can drive a car.", ru:"Я умею водить машину."}, {en:"He drove very fast.", ru:"Он вел очень быстро."}, {en:"Have you ever driven?", ru:"Ты когда-нибудь водил?"}] },
-                { v1: "break", v2: "broke", v3: "broken", ru: "ломать", gapAnswer: "broke", sentence: "Who ___ the window?", wrong: ["breaked", "broken", "breaks"], examples: [{en:"Don't break the glass.", ru:"Не разбей стекло."}, {en:"Who broke it?", ru:"Кто разбил это?"}, {en:"My phone is broken.", ru:"Мой телефон сломан."}] },
-                { v1: "bring", v2: "brought", v3: "brought", ru: "приносить", gapAnswer: "brought", sentence: "I ___ some snacks to the party.", wrong: ["bringed", "brang", "brings"], examples: [{en:"Bring me a cup.", ru:"Принеси мне чашку."}, {en:"I brought snacks.", ru:"Я принес закуски."}, {en:"She has brought news.", ru:"Она принесла новости."}] },
-                { v1: "buy", v2: "bought", v3: "bought", ru: "покупать", gapAnswer: "bought", sentence: "He ___ a new laptop.", wrong: ["buyed", "boughten", "buys"], examples: [{en:"I want to buy a house.", ru:"Я хочу купить дом."}, {en:"She bought a dress.", ru:"Она купила платье."}, {en:"Have you bought tickets?", ru:"Ты купил билеты?"}] },
-                { v1: "catch", v2: "caught", v3: "caught", ru: "ловить", gapAnswer: "caught", sentence: "The police ___ the thief.", wrong: ["catched", "cotched", "catches"], examples: [{en:"Catch the ball!", ru:"Лови мяч!"}, {en:"I caught a cold.", ru:"Я простудился."}, {en:"He has caught a big fish.", ru:"Он поймал большую рыбу."}] },
-                { v1: "choose", v2: "chose", v3: "chosen", ru: "выбирать", gapAnswer: "chose", sentence: "She ___ the red pill.", wrong: ["choosed", "chosen", "chooses"], examples: [{en:"Choose your destiny.", ru:"Выбирай свою судьбу."}, {en:"He chose to stay.", ru:"Он решил остаться."}, {en:"I haven't chosen yet.", ru:"Я ещё не выбрал."}] },
-                { v1: "cost", v2: "cost", v3: "cost", ru: "стоить", gapAnswer: "cost", sentence: "The ticket ___ 50 dollars.", wrong: ["costed", "costs", "cast"], examples: [{en:"How much does it cost?", ru:"Сколько это стоит?"}, {en:"It cost me a lot.", ru:"Это стоило мне многого."}, {en:"The price has cost them.", ru:"Эта цена обошлась им дорого."}] },
-                { v1: "feel", v2: "felt", v3: "felt", ru: "чувствовать", gapAnswer: "felt", sentence: "I ___ sick yesterday.", wrong: ["feeled", "fallen", "feels"], examples: [{en:"I feel good.", ru:"Я чувствую себя хорошо."}, {en:"She felt tired.", ru:"Она чувствовала усталость."}, {en:"He has felt better.", ru:"Ему стало лучше."}] },
-                { v1: "fall", v2: "fell", v3: "fallen", ru: "падать", gapAnswer: "fell", sentence: "The apple ___ from the tree.", wrong: ["falled", "fallen", "falls"], examples: [{en:"Don't fall down.", ru:"Не упади."}, {en:"He fell asleep.", ru:"Он уснул."}, {en:"The snow has fallen.", ru:"Выпал снег."}] },
-                { v1: "forget", v2: "forgot", v3: "forgotten", ru: "забывать", gapAnswer: "forgot", sentence: "I ___ my keys at home.", wrong: ["forgetted", "forgotten", "forgets"], examples: [{en:"Don't forget me.", ru:"Не забывай меня."}, {en:"I forgot your name.", ru:"Я забыл твоё имя."}, {en:"He has forgotten to call.", ru:"Он забыл позвонить."}] },
-                { v1: "lose", v2: "lost", v3: "lost", ru: "терять", gapAnswer: "lost", sentence: "He ___ his wallet on the train.", wrong: ["losed", "loosen", "loses"], examples: [{en:"Don't lose hope.", ru:"Не теряй надежду."}, {en:"I lost my phone.", ru:"Я потерял телефон."}, {en:"We have lost the game.", ru:"Мы проиграли игру."}] },
-                { v1: "pay", v2: "paid", v3: "paid", ru: "платить", gapAnswer: "paid", sentence: "I ___ for the dinner.", wrong: ["payed", "payen", "pays"], examples: [{en:"I will pay by card.", ru:"Я оплачу картой."}, {en:"He paid the bill.", ru:"Он оплатил счёт."}, {en:"Have you paid?", ru:"Ты заплатил?"}] },
-                { v1: "build", v2: "built", v3: "built", ru: "строить", gapAnswer: "built", sentence: "They ___ a new house.", wrong: ["builded", "builten", "builds"], examples: [{en:"We build websites.", ru:"Мы создаём сайты."}, {en:"They built a bridge.", ru:"Они построили мост."}, {en:"Rome wasn't built in a day.", ru:"Рим не сразу строился."}] },
-                { v1: "cut", v2: "cut", v3: "cut", ru: "резать", gapAnswer: "cut", sentence: "He ___ his finger with a knife.", wrong: ["cutted", "cuts", "cat"], examples: [{en:"Cut the paper.", ru:"Разрежь бумагу."}, {en:"I cut my hair.", ru:"Я постригся."}, {en:"She has cut the cake.", ru:"Она разрезала торт."}] },
-                { v1: "draw", v2: "drew", v3: "drawn", ru: "рисовать/тянуть", gapAnswer: "drew", sentence: "She ___ a beautiful picture.", wrong: ["drawed", "drawn", "draws"], examples: [{en:"Draw a circle.", ru:"Нарисуй круг."}, {en:"He drew his sword.", ru:"Он обнажил меч."}, {en:"I have drawn a map.", ru:"Я нарисовал карту."}] },
-                { v1: "grow", v2: "grew", v3: "grown", ru: "расти/выращивать", gapAnswer: "grew", sentence: "The tree ___ very fast.", wrong: ["growed", "grown", "grows"], examples: [{en:"Plants grow in soil.", ru:"Растения растут в почве."}, {en:"He grew a beard.", ru:"Он отрастил бороду."}, {en:"She has grown so much.", ru:"Она так выросла."}] },
-                { v1: "hit", v2: "hit", v3: "hit", ru: "ударять", gapAnswer: "hit", sentence: "The ball ___ the window.", wrong: ["hitted", "hits", "hat"], examples: [{en:"Hit the target.", ru:"Попади в цель."}, {en:"He hit the brakes.", ru:"Он нажал по тормозам."}, {en:"The song has hit the charts.", ru:"Песня попала в чарты."}] },
-                { v1: "spend", v2: "spent", v3: "spent", ru: "тратить/проводить", gapAnswer: "spent", sentence: "I ___ all my money yesterday.", wrong: ["spended", "spends", "span"], examples: [{en:"I spend time with family.", ru:"Я провожу время с семьёй."}, {en:"We spent $100.", ru:"Мы потратили 100$."}, {en:"All energy is spent.", ru:"Вся энергия потрачена."}] },
-                { v1: "win", v2: "won", v3: "won", ru: "побеждать", gapAnswer: "won", sentence: "Our team ___ the cup.", wrong: ["winned", "wins", "wan"], examples: [{en:"I want to win.", ru:"Я хочу выиграть."}, {en:"He won the lottery.", ru:"Он выиграл в лотерею."}, {en:"They have won again.", ru:"Они снова победили."}] },
-                { v1: "send", v2: "sent", v3: "sent", ru: "отправлять", gapAnswer: "sent", sentence: "She ___ me an email.", wrong: ["sended", "sends", "sand"], examples: [{en:"Send me a message.", ru:"Отправь мне сообщение."}, {en:"I sent the letter.", ru:"Я отправил письмо."}, {en:"The package is sent.", ru:"Посылка отправлена."}] },
-                { v1: "sleep", v2: "slept", v3: "slept", ru: "спать", gapAnswer: "slept", sentence: "I ___ for 8 hours.", wrong: ["sleeped", "sleeps", "slap"], examples: [{en:"I sleep well.", ru:"Я сплю хорошо."}, {en:"She slept on the couch.", ru:"Она спала на диване."}, {en:"He hasn't slept yet.", ru:"Он ещё не спал."}] },
-                { v1: "understand", v2: "understood", v3: "understood", ru: "понимать", gapAnswer: "understood", sentence: "I ___ the rule immediately.", wrong: ["understanded", "understands", "understoof"], examples: [{en:"Do you understand?", ru:"Вы понимаете?"}, {en:"I understood everything.", ru:"Я понял всё."}, {en:"Am I understood?", ru:"Я понятно выражаюсь?"}] },
-                { v1: "wake", v2: "woke", v3: "woken", ru: "будить/просыпаться", gapAnswer: "woke", sentence: "He ___ up very early.", wrong: ["waked", "woken", "wakes"], examples: [{en:"Wake me up at 7.", ru:"Разбуди меня в 7."}, {en:"I woke up late.", ru:"Я проснулся поздно."}, {en:"She has woken the baby.", ru:"Она разбудила ребёнка."}] },
-                { v1: "wear", v2: "wore", v3: "worn", ru: "носить (одежду)", gapAnswer: "wore", sentence: "She ___ a beautiful dress.", wrong: ["weared", "worn", "wears"], examples: [{en:"I wear glasses.", ru:"Я ношу очки."}, {en:"He wore a hat.", ru:"Он носил шляпу."}, {en:"The shoes are worn out.", ru:"Ботинки износились."}] },
-                { v1: "throw", v2: "threw", v3: "thrown", ru: "бросать", gapAnswer: "threw", sentence: "He ___ the ball to me.", wrong: ["throwed", "thrown", "throws"], examples: [{en:"Throw it away.", ru:"Выброси это."}, {en:"She threw a stone.", ru:"Она бросила камень."}, {en:"The dice is thrown.", ru:"Жребий брошен."}] },
-                { v1: "sing", v2: "sang", v3: "sung", ru: "петь", gapAnswer: "sang", sentence: "She ___ a beautiful song.", wrong: ["singed", "sung", "sings"], examples: [{en:"I love to sing.", ru:"Я люблю петь."}, {en:"He sang perfectly.", ru:"Он спел идеально."}, {en:"The choir has sung.", ru:"Хор уже спел."}] },
-                { v1: "fly", v2: "flew", v3: "flown", ru: "летать", gapAnswer: "flew", sentence: "The bird ___ away.", wrong: ["flyed", "flown", "flies"], examples: [{en:"Birds can fly.", ru:"Птицы умеют летать."}, {en:"We flew to Paris.", ru:"Мы летали в Париж."}, {en:"Time has flown.", ru:"Время пролетело."}] },
-                { v1: "ring", v2: "rang", v3: "rung", ru: "звонить", gapAnswer: "rang", sentence: "The telephone ___ loudly.", wrong: ["ringed", "rung", "rings"], examples: [{en:"Ring the bell.", ru:"Позвони в звонок."}, {en:"The alarm rang.", ru:"Будильник зазвенел."}, {en:"Has he rung you?", ru:"Он тебе звонил?"}] }
+                { v1: "begin", v2: "began", v3: "begun", ru: "начинать", 
+                  gaps: [ {s: "The movie ___ at 8.", a: "began", w: ["begun", "beginned", "begins"]}, {s: "It has already ___ to rain.", a: "begun", w: ["began", "beginned", "begins"]}, {s: "They ___ their journey yesterday.", a: "began", w: ["begun", "beginned", "begins"]} ],
+                  examples: [{en:"Let's begin.", ru:"Давайте начнём."}, {en:"It began to rain.", ru:"Начался дождь."}, {en:"The show has begun.", ru:"Шоу началось."}] },
+                { v1: "become", v2: "became", v3: "become", ru: "становиться", 
+                  gaps: [ {s: "He ___ a doctor after university.", a: "became", w: ["become", "becomed", "becomes"]}, {s: "It has ___ much colder.", a: "become", w: ["became", "becomed", "becomes"]}, {s: "She ___ famous overnight.", a: "became", w: ["become", "becomed", "becomes"]} ],
+                  examples: [{en:"I want to become a pilot.", ru:"Я хочу стать пилотом."}, {en:"He became famous.", ru:"Он стал знаменитым."}, {en:"It has become cold.", ru:"Стало холодно."}] },
+                { v1: "break", v2: "broke", v3: "broken", ru: "ломать(ся)", 
+                  gaps: [ {s: "Who ___ the window?", a: "broke", w: ["broken", "breaked", "breaks"]}, {s: "My phone is ___.", a: "broken", w: ["broke", "breaked", "break"]}, {s: "He ___ his leg yesterday.", a: "broke", w: ["broken", "breaked", "breaks"]} ],
+                  examples: [{en:"Don't break it.", ru:"Не разбей это."}, {en:"Who broke the glass?", ru:"Кто разбил стекло?"}, {en:"My phone is broken.", ru:"Мой телефон сломан."}] },
+                { v1: "build", v2: "built", v3: "built", ru: "строить", 
+                  gaps: [ {s: "They ___ a new house last year.", a: "built", w: ["builded", "builten", "builds"]}, {s: "Rome wasn't ___ in a day.", a: "built", w: ["builded", "build", "builten"]}, {s: "He ___ a sandcastle.", a: "built", w: ["builded", "builten", "builds"]} ],
+                  examples: [{en:"We build websites.", ru:"Мы создаём сайты."}, {en:"They built a bridge.", ru:"Они построили мост."}, {en:"Rome wasn't built in a day.", ru:"Рим не сразу строился."}] },
+                { v1: "catch", v2: "caught", v3: "caught", ru: "ловить", 
+                  gaps: [ {s: "The police ___ the thief.", a: "caught", w: ["catched", "cotched", "catches"]}, {s: "I have ___ a cold.", a: "caught", w: ["catched", "catch", "catches"]}, {s: "He ___ the ball easily.", a: "caught", w: ["catched", "cotched", "catches"]} ],
+                  examples: [{en:"Catch the ball!", ru:"Лови мяч!"}, {en:"I caught a cold.", ru:"Я простудился."}, {en:"He has caught a fish.", ru:"Он поймал рыбу."}] },
+                { v1: "choose", v2: "chose", v3: "chosen", ru: "выбирать", 
+                  gaps: [ {s: "She ___ the red pill.", a: "chose", w: ["chosen", "choosed", "chooses"]}, {s: "Have you ___ your meal?", a: "chosen", w: ["chose", "choosed", "chooses"]}, {s: "He ___ to stay home.", a: "chose", w: ["chosen", "choosed", "chooses"]} ],
+                  examples: [{en:"Choose your destiny.", ru:"Выбирай свою судьбу."}, {en:"He chose to stay.", ru:"Он решил остаться."}, {en:"I haven't chosen yet.", ru:"Я ещё не выбрал."}] },
+                { v1: "cost", v2: "cost", v3: "cost", ru: "стоить", 
+                  gaps: [ {s: "The ticket ___ 50 dollars.", a: "cost", w: ["costed", "costs", "cast"]}, {s: "It has ___ them a lot of time.", a: "cost", w: ["costed", "costs", "cast"]}, {s: "This car ___ me a fortune.", a: "cost", w: ["costed", "costs", "cast"]} ],
+                  examples: [{en:"How much does it cost?", ru:"Сколько это стоит?"}, {en:"It cost me a lot.", ru:"Это стоило мне многого."}, {en:"The price has cost them.", ru:"Эта цена обошлась им дорого."}] },
+                { v1: "draw", v2: "drew", v3: "drawn", ru: "тянуть/рисовать", 
+                  gaps: [ {s: "She ___ a beautiful picture.", a: "drew", w: ["drawn", "drawed", "draws"]}, {s: "I have ___ a map for you.", a: "drawn", w: ["drew", "drawed", "draws"]}, {s: "He ___ his sword.", a: "drew", w: ["drawn", "drawed", "draws"]} ],
+                  examples: [{en:"Draw a circle.", ru:"Нарисуй круг."}, {en:"He drew his sword.", ru:"Он обнажил меч."}, {en:"I have drawn a map.", ru:"Я нарисовал карту."}] },
+                { v1: "drive", v2: "drove", v3: "driven", ru: "ехать (водить)", 
+                  gaps: [ {s: "He ___ the car very fast.", a: "drove", w: ["driven", "drived", "drives"]}, {s: "Have you ever ___ a tractor?", a: "driven", w: ["drove", "drived", "drive"]}, {s: "She ___ us to the airport.", a: "drove", w: ["driven", "drived", "drives"]} ],
+                  examples: [{en:"I can drive.", ru:"Я умею водить."}, {en:"He drove very fast.", ru:"Он вел очень быстро."}, {en:"Have you ever driven?", ru:"Ты когда-нибудь водил?"}] },
+                { v1: "fall", v2: "fell", v3: "fallen", ru: "падать", 
+                  gaps: [ {s: "The apple ___ from the tree.", a: "fell", w: ["fallen", "falled", "falls"]}, {s: "Much snow has ___ today.", a: "fallen", w: ["fell", "falled", "falls"]}, {s: "He ___ asleep quickly.", a: "fell", w: ["fallen", "falled", "falls"]} ],
+                  examples: [{en:"Don't fall.", ru:"Не упади."}, {en:"He fell asleep.", ru:"Он уснул."}, {en:"Snow has fallen.", ru:"Выпал снег."}] },
+                { v1: "fly", v2: "flew", v3: "flown", ru: "летать", 
+                  gaps: [ {s: "The bird ___ away.", a: "flew", w: ["flown", "flyed", "flies"]}, {s: "Time has ___ so fast.", a: "flown", w: ["flew", "flyed", "flies"]}, {s: "We ___ to Paris last week.", a: "flew", w: ["flown", "flyed", "flies"]} ],
+                  examples: [{en:"Birds can fly.", ru:"Птицы умеют летать."}, {en:"We flew to Paris.", ru:"Мы летали в Париж."}, {en:"Time has flown.", ru:"Время пролетело."}] },
+                { v1: "forget", v2: "forgot", v3: "forgotten", ru: "забывать", 
+                  gaps: [ {s: "I ___ my keys at home.", a: "forgot", w: ["forgotten", "forgetted", "forgets"]}, {s: "He has ___ my name.", a: "forgotten", w: ["forgot", "forgetted", "forgets"]}, {s: "She ___ to call me yesterday.", a: "forgot", w: ["forgotten", "forgetted", "forgets"]} ],
+                  examples: [{en:"Don't forget me.", ru:"Не забывай меня."}, {en:"I forgot your name.", ru:"Я забыл твоё имя."}, {en:"He has forgotten to call.", ru:"Он забыл позвонить."}] },
+                { v1: "grow", v2: "grew", v3: "grown", ru: "выращивать/расти", 
+                  gaps: [ {s: "The tree ___ very fast.", a: "grew", w: ["grown", "growed", "grows"]}, {s: "She has ___ so much this year.", a: "grown", w: ["grew", "growed", "grows"]}, {s: "He ___ a beard.", a: "grew", w: ["grown", "growed", "grows"]} ],
+                  examples: [{en:"Plants grow in soil.", ru:"Растения растут в почве."}, {en:"He grew a beard.", ru:"Он отрастил бороду."}, {en:"She has grown so much.", ru:"Она так выросла."}] },
+                { v1: "hold", v2: "held", v3: "held", ru: "держать", 
+                  gaps: [ {s: "He ___ my hand tight.", a: "held", w: ["holded", "holden", "holds"]}, {s: "They have ___ a meeting.", a: "held", w: ["holded", "hold", "holds"]}, {s: "She ___ the baby carefully.", a: "held", w: ["holded", "holden", "holds"]} ],
+                  examples: [{en:"Hold the door.", ru:"Придержи дверь."}, {en:"She held the baby.", ru:"Она держала ребёнка."}, {en:"They have held a meeting.", ru:"Они провели собрание."}] },
+                { v1: "keep", v2: "kept", v3: "kept", ru: "хранить", 
+                  gaps: [ {s: "She ___ the secret safe.", a: "kept", w: ["keeped", "keepen", "keeps"]}, {s: "I have ___ my promise.", a: "kept", w: ["keeped", "keep", "keeps"]}, {s: "He ___ walking despite the rain.", a: "kept", w: ["keeped", "keepen", "keeps"]} ],
+                  examples: [{en:"Keep your room clean.", ru:"Держи комнату в чистоте."}, {en:"He kept walking.", ru:"Он продолжал идти."}, {en:"I have kept my promise.", ru:"Я сдержал своё обещание."}] },
+                { v1: "learn", v2: "learnt", v3: "learnt", ru: "учиться", 
+                  gaps: [ {s: "I ___ a lot from that book.", a: "learnt", w: ["learnen", "learnts", "loarn"]}, {s: "She has ___ English quickly.", a: "learnt", w: ["learn", "learnen", "learnts"]}, {s: "He ___ the rule by heart.", a: "learnt", w: ["learnen", "learnts", "loarn"]} ],
+                  examples: [{en:"I want to learn.", ru:"Я хочу учиться."}, {en:"He learnt the rule.", ru:"Он выучил правило."}, {en:"She has learnt English.", ru:"Она выучила английский."}] },
+                { v1: "let", v2: "let", v3: "let", ru: "разрешать", 
+                  gaps: [ {s: "Mom ___ me go to the party.", a: "let", w: ["letted", "lets", "lat"]}, {s: "They have ___ him go.", a: "let", w: ["letted", "lets", "lat"]}, {s: "He ___ the dog out.", a: "let", w: ["letted", "lets", "lat"]} ],
+                  examples: [{en:"Let me try.", ru:"Дай мне попробовать."}, {en:"He let the dog out.", ru:"Он выпустил собаку."}, {en:"They have let him go.", ru:"Они позволили ему уйти."}] },
+                { v1: "lose", v2: "lost", v3: "lost", ru: "терять", 
+                  gaps: [ {s: "He ___ his wallet on the train.", a: "lost", w: ["losed", "loosen", "loses"]}, {s: "We have ___ the game.", a: "lost", w: ["losed", "lose", "loses"]}, {s: "I ___ my phone yesterday.", a: "lost", w: ["losed", "loosen", "loses"]} ],
+                  examples: [{en:"Don't lose hope.", ru:"Не теряй надежду."}, {en:"I lost my phone.", ru:"Я потерял телефон."}, {en:"We have lost the game.", ru:"Мы проиграли игру."}] },
+                { v1: "mean", v2: "meant", v3: "meant", ru: "означать", 
+                  gaps: [ {s: "I didn't know what it ___.", a: "meant", w: ["meaned", "meanen", "means"]}, {s: "It has always ___ a lot to me.", a: "meant", w: ["meaned", "mean", "means"]}, {s: "I ___ it as a joke.", a: "meant", w: ["meaned", "meanen", "means"]} ],
+                  examples: [{en:"What does it mean?", ru:"Что это значит?"}, {en:"I meant it as a joke.", ru:"Я сказал это в шутку."}, {en:"It has always meant a lot.", ru:"Это всегда много значило."}] },
+                { v1: "meet", v2: "met", v3: "met", ru: "встречать(ся)", 
+                  gaps: [ {s: "We ___ at the station.", a: "met", w: ["meeted", "meeten", "meets"]}, {s: "We have just ___.", a: "met", w: ["meeted", "meet", "meets"]}, {s: "I ___ her yesterday.", a: "met", w: ["meeted", "meeten", "meets"]} ],
+                  examples: [{en:"Nice to meet you.", ru:"Приятно познакомиться."}, {en:"I met her yesterday.", ru:"Я встретил её вчера."}, {en:"We have just met.", ru:"Мы только что познакомились."}] },
+                { v1: "pay", v2: "paid", v3: "paid", ru: "платить", 
+                  gaps: [ {s: "I ___ for dinner.", a: "paid", w: ["payed", "payen", "pays"]}, {s: "Have you ___ the bill?", a: "paid", w: ["payed", "pay", "pays"]}, {s: "He ___ me back.", a: "paid", w: ["payed", "payen", "pays"]} ],
+                  examples: [{en:"I will pay by card.", ru:"Я оплачу картой."}, {en:"He paid the bill.", ru:"Он оплатил счёт."}, {en:"Have you paid?", ru:"Ты заплатил?"}] },
+                { v1: "send", v2: "sent", v3: "sent", ru: "посылать", 
+                  gaps: [ {s: "She ___ me an email.", a: "sent", w: ["sended", "sand", "sends"]}, {s: "The package is ___.", a: "sent", w: ["sended", "send", "sends"]}, {s: "I ___ the letter yesterday.", a: "sent", w: ["sended", "sand", "sends"]} ],
+                  examples: [{en:"Send me a message.", ru:"Отправь мне сообщение."}, {en:"I sent the letter.", ru:"Я отправил письмо."}, {en:"The package is sent.", ru:"Посылка отправлена."}] },
+                { v1: "set", v2: "set", v3: "set", ru: "класть/настраивать", 
+                  gaps: [ {s: "He ___ the alarm clock.", a: "set", w: ["setted", "sat", "sets"]}, {s: "I have ___ a new goal.", a: "set", w: ["setted", "sets", "sat"]}, {s: "The sun ___ early today.", a: "set", w: ["setted", "sat", "sets"]} ],
+                  examples: [{en:"Set the table.", ru:"Накрой на стол."}, {en:"The sun set.", ru:"Солнце село."}, {en:"I have set a new goal.", ru:"Я поставил новую цель."}] },
+                { v1: "show", v2: "showed", v3: "shown", ru: "показывать", 
+                  gaps: [ {s: "She ___ me her dress.", a: "showed", w: ["shown", "shew", "shows"]}, {s: "He has ___ great results.", a: "shown", w: ["showed", "shew", "shows"]}, {s: "They ___ us the way.", a: "showed", w: ["shown", "shew", "shows"]} ],
+                  examples: [{en:"Show me your ticket.", ru:"Покажи мне свой билет."}, {en:"He showed me the way.", ru:"Он показал мне дорогу."}, {en:"He has shown great results.", ru:"Он показал отличные результаты."}] },
+                { v1: "sing", v2: "sang", v3: "sung", ru: "петь", 
+                  gaps: [ {s: "She ___ a beautiful song.", a: "sang", w: ["sung", "singed", "sings"]}, {s: "The choir has already ___.", a: "sung", w: ["sang", "singed", "sings"]}, {s: "He ___ perfectly.", a: "sang", w: ["sung", "singed", "sings"]} ],
+                  examples: [{en:"I love to sing.", ru:"Я люблю петь."}, {en:"He sang perfectly.", ru:"Он спел идеально."}, {en:"The choir has sung.", ru:"Хор уже спел."}] },
+                { v1: "spend", v2: "spent", v3: "spent", ru: "тратить", 
+                  gaps: [ {s: "I ___ all my money.", a: "spent", w: ["spended", "span", "spends"]}, {s: "All energy is ___.", a: "spent", w: ["spended", "spend", "spends"]}, {s: "We ___ $100 yesterday.", a: "spent", w: ["spended", "span", "spends"]} ],
+                  examples: [{en:"I spend time with family.", ru:"Я провожу время с семьёй."}, {en:"We spent $100.", ru:"Мы потратили 100$."}, {en:"All energy is spent.", ru:"Вся энергия потрачена."}] },
+                { v1: "swim", v2: "swam", v3: "swum", ru: "плавать", 
+                  gaps: [ {s: "He ___ across the river.", a: "swam", w: ["swum", "swimmed", "swims"]}, {s: "I have never ___ in the ocean.", a: "swum", w: ["swam", "swimmed", "swims"]}, {s: "We ___ in the pool yesterday.", a: "swam", w: ["swum", "swimmed", "swims"]} ],
+                  examples: [{en:"I can swim.", ru:"Я умею плавать."}, {en:"He swam across the river.", ru:"Он переплыл реку."}, {en:"I have never swum in the ocean.", ru:"Я никогда не плавал в океане."}] },
+                { v1: "teach", v2: "taught", v3: "taught", ru: "учить", 
+                  gaps: [ {s: "She ___ me to drive.", a: "taught", w: ["teached", "taughten", "teaches"]}, {s: "He has ___ for years.", a: "taught", w: ["teached", "teach", "teaches"]}, {s: "They ___ us English.", a: "taught", w: ["teached", "taughten", "teaches"]} ],
+                  examples: [{en:"I teach kids.", ru:"Я учу детей."}, {en:"She taught me to drive.", ru:"Она научила меня водить."}, {en:"He has taught for years.", ru:"Он преподавал годами."}] },
+                { v1: "wake", v2: "woke", v3: "woken", ru: "будить", 
+                  gaps: [ {s: "I ___ up very late.", a: "woke", w: ["woken", "waked", "wakes"]}, {s: "She has ___ the baby.", a: "woken", w: ["woke", "waked", "wakes"]}, {s: "He ___ up at 7 am.", a: "woke", w: ["woken", "waked", "wakes"]} ],
+                  examples: [{en:"Wake me up at 7.", ru:"Разбуди меня в 7."}, {en:"I woke up late.", ru:"Я проснулся поздно."}, {en:"She has woken the baby.", ru:"Она разбудила ребёнка."}] },
+                { v1: "win", v2: "won", v3: "won", ru: "побеждать", 
+                  gaps: [ {s: "Our team ___ the cup.", a: "won", w: ["winned", "wan", "wins"]}, {s: "They have ___ again.", a: "won", w: ["winned", "win", "wins"]}, {s: "He ___ the lottery.", a: "won", w: ["winned", "wan", "wins"]} ],
+                  examples: [{en:"I want to win.", ru:"Я хочу выиграть."}, {en:"He won the lottery.", ru:"Он выиграл в лотерею."}, {en:"They have won again.", ru:"Они снова победили."}] }
             ],
             advanced: [
-                { v1: "broadcast", v2: "broadcast", v3: "broadcast", ru: "транслировать", gapAnswer: "broadcast", sentence: "The channel ___ the match live.", wrong: ["broadcasted", "broadcaste", "broads"], examples: [{en:"They broadcast news.", ru:"Они транслируют новости."}, {en:"The channel broadcast it.", ru:"Канал транслировал это."}, {en:"It was broadcast live.", ru:"Это транслировалось в прямом эфире."}] },
-                { v1: "forbid", v2: "forbade", v3: "forbidden", ru: "запрещать", gapAnswer: "forbade", sentence: "The teacher ___ using phones.", wrong: ["forbidded", "forbiden", "forbids"], examples: [{en:"I forbid you to go.", ru:"Я запрещаю тебе идти."}, {en:"He forbade using phones.", ru:"Он запретил использовать телефоны."}, {en:"Smoking is forbidden.", ru:"Курение запрещено."}] },
-                { v1: "overcome", v2: "overcame", v3: "overcome", ru: "преодолевать", gapAnswer: "overcame", sentence: "She ___ many difficulties.", wrong: ["overcomed", "overcoming", "overcomes"], examples: [{en:"You can overcome fear.", ru:"Ты можешь преодолеть страх."}, {en:"She overcame difficulties.", ru:"Она преодолела трудности."}, {en:"He has overcome illness.", ru:"Он победил болезнь."}] },
-                { v1: "shed", v2: "shed", v3: "shed", ru: "проливать/сбрасывать", gapAnswer: "shed", sentence: "The snake ___ its skin.", wrong: ["shedded", "shode", "sheds"], examples: [{en:"Trees shed leaves.", ru:"Деревья сбрасывают листья."}, {en:"She shed a tear.", ru:"Она проронила слезу."}, {en:"Light is shed on this.", ru:"На это пролит свет."}] },
-                { v1: "split", v2: "split", v3: "split", ru: "разделять", gapAnswer: "split", sentence: "We ___ the bill equally.", wrong: ["splitted", "splate", "splits"], examples: [{en:"Let's split the cost.", ru:"Давай разделим расходы."}, {en:"He split the wood.", ru:"Он расколол дрова."}, {en:"The group has split.", ru:"Группа разделилась."}] },
-                { v1: "swear", v2: "swore", v3: "sworn", ru: "клясться/ругаться", gapAnswer: "swore", sentence: "He ___ to tell the truth.", wrong: ["sweared", "sworn", "swears"], examples: [{en:"I swear it's true.", ru:"Клянусь, это правда."}, {en:"He swore at me.", ru:"Он выругался на меня."}, {en:"I have sworn an oath.", ru:"Я принёс клятву."}] },
-                { v1: "tear", v2: "tore", v3: "torn", ru: "рвать", gapAnswer: "tore", sentence: "I accidentally ___ my shirt.", wrong: ["teared", "torn", "tears"], examples: [{en:"Don't tear the paper.", ru:"Не порви бумагу."}, {en:"She tore the letter.", ru:"Она порвала письмо."}, {en:"My jeans are torn.", ru:"Мои джинсы порваны."}] },
-                { v1: "weave", v2: "wove", v3: "woven", ru: "ткать/плести", gapAnswer: "wove", sentence: "She ___ a beautiful basket.", wrong: ["weaved", "woven", "weaves"], examples: [{en:"Spiders weave webs.", ru:"Пауки плетут паутину."}, {en:"He wove a tale.", ru:"Он сплёл сказку."}, {en:"A woven fabric.", ru:"Тканый материал."}] },
-                { v1: "wring", v2: "wrung", v3: "wrung", ru: "выжимать", gapAnswer: "wrung", sentence: "He ___ the wet towel out.", wrong: ["wringed", "wrang", "wrings"], examples: [{en:"Wring the cloth.", ru:"Выжми тряпку."}, {en:"She wrung her hands.", ru:"Она заломила руки."}, {en:"All water is wrung out.", ru:"Вся вода выжата."}] },
-                { v1: "shrink", v2: "shrank", v3: "shrunk", ru: "сжиматься/садиться", gapAnswer: "shrank", sentence: "My sweater ___ in the wash.", wrong: ["shrinked", "shrunk", "shrinks"], examples: [{en:"Hot water makes it shrink.", ru:"Из-за горячей воды это садится."}, {en:"The market shrank.", ru:"Рынок сократился."}, {en:"My shirt has shrunk.", ru:"Моя рубашка села."}] },
-                { v1: "sting", v2: "stung", v3: "stung", ru: "жалить", gapAnswer: "stung", sentence: "A bee ___ him on the arm.", wrong: ["stinged", "stang", "stings"], examples: [{en:"Bees sting.", ru:"Пчёлы жалят."}, {en:"A wasp stung me.", ru:"Меня ужалила оса."}, {en:"I was stung by a nettle.", ru:"Я обжёгся крапивой."}] },
-                { v1: "sweep", v2: "swept", v3: "swept", ru: "мести", gapAnswer: "swept", sentence: "I ___ the floor this morning.", wrong: ["sweeped", "sweepen", "sweeps"], examples: [{en:"Sweep the floor.", ru:"Подмети пол."}, {en:"The wind swept the leaves.", ru:"Ветер смёл листья."}, {en:"He was swept away.", ru:"Его снесло."}] },
-                { v1: "weep", v2: "wept", v3: "wept", ru: "плакать", gapAnswer: "wept", sentence: "She ___ when she heard the news.", wrong: ["weeped", "weepen", "weeps"], examples: [{en:"Don't weep.", ru:"Не плачь."}, {en:"He wept bitterly.", ru:"Он горько плакал."}, {en:"She has wept all night.", ru:"Она проплакала всю ночь."}] },
-                { v1: "withdraw", v2: "withdrew", v3: "withdrawn", ru: "снимать (деньги)/отступать", gapAnswer: "withdrew", sentence: "He ___ $100 from the ATM.", wrong: ["withdrawed", "withdrawn", "withdraws"], examples: [{en:"I need to withdraw cash.", ru:"Мне нужно снять наличные."}, {en:"The troops withdrew.", ru:"Войска отступили."}, {en:"He has withdrawn his offer.", ru:"Он отозвал своё предложение."}] },
-                { v1: "forecast", v2: "forecast", v3: "forecast", ru: "прогнозировать", gapAnswer: "forecast", sentence: "They ___ rain for tomorrow.", wrong: ["forecasted", "forecaste", "forecasts"], examples: [{en:"They forecast rain.", ru:"Они прогнозируют дождь."}, {en:"He forecast the crisis.", ru:"Он предсказал кризис."}, {en:"The weather is forecast.", ru:"Погода спрогнозирована."}] },
-                { v1: "arise", v2: "arose", v3: "arisen", ru: "возникать", gapAnswer: "arose", sentence: "A new problem ___ yesterday.", wrong: ["arised", "arisen", "arises"], examples: [{en:"Problems arise often.", ru:"Проблемы возникают часто."}, {en:"A difficulty arose.", ru:"Возникла трудность."}, {en:"Conflicts have arisen.", ru:"Возникли конфликты."}] },
-                { v1: "bind", v2: "bound", v3: "bound", ru: "связывать", gapAnswer: "bound", sentence: "They ___ the books together.", wrong: ["binded", "binds", "band"], examples: [{en:"Bind the papers.", ru:"Свяжи бумаги."}, {en:"He bound her hands.", ru:"Он связал её руки."}, {en:"We are bound by law.", ru:"Мы связаны законом."}] },
-                { v1: "bleed", v2: "bled", v3: "bled", ru: "кровоточить", gapAnswer: "bled", sentence: "His nose ___ continuously.", wrong: ["bleeded", "bleeds", "blad"], examples: [{en:"The wound may bleed.", ru:"Рана может кровоточить."}, {en:"He bled heavily.", ru:"У него было сильное кровотечение."}, {en:"My heart has bled for them.", ru:"Моё сердце обливалось кровью за них."}] },
-                { v1: "breed", v2: "bred", v3: "bred", ru: "разводить/воспитывать", gapAnswer: "bred", sentence: "He ___ horses on his farm.", wrong: ["breeded", "breeds", "brad"], examples: [{en:"They breed dogs.", ru:"Они разводят собак."}, {en:"Familiarity bred contempt.", ru:"Фамильярность породила презрение."}, {en:"Well-bred manners.", ru:"Хорошие манеры (воспитание)."}] },
-                { v1: "cling", v2: "clung", v3: "clung", ru: "цепляться", gapAnswer: "clung", sentence: "She ___ to his arm tightly.", wrong: ["clinged", "clings", "clang"], examples: [{en:"Cling to hope.", ru:"Цепляйся за надежду."}, {en:"The child clung to me.", ru:"Ребёнок прижался ко мне."}, {en:"They have clung together.", ru:"Они держались вместе."}] },
-                { v1: "creep", v2: "crept", v3: "crept", ru: "ползать/красться", gapAnswer: "crept", sentence: "The cat ___ closer to the bird.", wrong: ["creeped", "creeps", "crap"], examples: [{en:"Shadows creep in.", ru:"Тени закрадываются."}, {en:"He crept up the stairs.", ru:"Он крался по лестнице."}, {en:"Doubt has crept in.", ru:"Закралось сомнение."}] },
-                { v1: "flee", v2: "fled", v3: "fled", ru: "спасаться бегством", gapAnswer: "fled", sentence: "The thief ___ the scene.", wrong: ["fleed", "flees", "flad"], examples: [{en:"Flee from danger.", ru:"Беги от опасности."}, {en:"They fled the country.", ru:"Они бежали из страны."}, {en:"The birds have fled.", ru:"Птицы улетели."}] },
-                { v1: "grind", v2: "ground", v3: "ground", ru: "молоть/точить", gapAnswer: "ground", sentence: "He ___ the coffee beans.", wrong: ["grinded", "grinds", "grand"], examples: [{en:"Grind the pepper.", ru:"Намели перец."}, {en:"The ship ground on rocks.", ru:"Корабль сел на мель."}, {en:"Freshly ground coffee.", ru:"Свежемолотый кофе."}] },
-                { v1: "kneel", v2: "knelt", v3: "knelt", ru: "стоять на коленях", gapAnswer: "knelt", sentence: "She ___ down to pray.", wrong: ["kneeled", "kneels", "knalt"], examples: [{en:"Kneel before the king.", ru:"Преклони колени перед королём."}, {en:"He knelt down.", ru:"Он опустился на колени."}, {en:"They have knelt all night.", ru:"Они простояли на коленях всю ночь."}] },
-                { v1: "leap", v2: "leapt", v3: "leapt", ru: "прыгать", gapAnswer: "leapt", sentence: "The frog ___ into the water.", wrong: ["leaped", "leaps", "lapt"], examples: [{en:"Look before you leap.", ru:"Не зная броду, не суйся в воду."}, {en:"He leapt over the fence.", ru:"Он перепрыгнул через забор."}, {en:"Prices have leapt up.", ru:"Цены подскочили."}] },
-                { v1: "sew", v2: "sewed", v3: "sewn", ru: "шить", gapAnswer: "sewed", sentence: "She ___ a new dress.", wrong: ["sewn", "sews", "saw"], examples: [{en:"I sew my own clothes.", ru:"Я сама шью себе одежду."}, {en:"He sewed a button on.", ru:"Он пришил пуговицу."}, {en:"The tear is sewn up.", ru:"Дыра зашита."}] },
-                { v1: "spill", v2: "spilt", v3: "spilt", ru: "проливать", gapAnswer: "spilt", sentence: "He ___ the milk on the floor.", wrong: ["spilled", "spills", "spall"], examples: [{en:"Don't spill the tea.", ru:"Не пролей чай."}, {en:"She spilt the water.", ru:"Она пролила воду."}, {en:"It's no use crying over spilt milk.", ru:"Слезами горю не поможешь."}] },
-                { v1: "spin", v2: "spun", v3: "spun", ru: "крутить/прясть", gapAnswer: "spun", sentence: "The wheel ___ very fast.", wrong: ["spinned", "spins", "span"], examples: [{en:"Spin the wheel.", ru:"Крути колесо."}, {en:"The dancer spun around.", ru:"Танцор закружился."}, {en:"A spider has spun a web.", ru:"Паук сплёл паутину."}] },
-                { v1: "spit", v2: "spat", v3: "spat", ru: "плевать", gapAnswer: "spat", sentence: "He ___ it out in disgust.", wrong: ["spitted", "spits", "spot"], examples: [{en:"Don't spit here.", ru:"Не плюй здесь."}, {en:"The cat spat at the dog.", ru:"Кошка фыркнула на собаку."}, {en:"He has spat the bone out.", ru:"Он выплюнул кость."}] },
-                { v1: "strike", v2: "struck", v3: "struck", ru: "ударять/бастовать", gapAnswer: "struck", sentence: "Lightning ___ the tree.", wrong: ["striked", "strikes", "stroke"], examples: [{en:"Workers strike today.", ru:"Рабочие бастуют сегодня."}, {en:"The clock struck twelve.", ru:"Часы пробили двенадцать."}, {en:"I was struck by her beauty.", ru:"Я был поражен её красотой."}] }
+                { v1: "beat", v2: "beat", v3: "beaten", ru: "ударять/побеждать", 
+                  gaps: [ {s: "Our team ___ theirs.", a: "beat", w: ["beated", "beaten", "beats"]}, {s: "He was ___ in chess.", a: "beaten", w: ["beat", "beated", "beats"]}, {s: "He ___ the drum loudly.", a: "beat", w: ["beated", "beaten", "beats"]} ],
+                  examples: [{en:"Beat the eggs.", ru:"Взбей яйца."}, {en:"Our team beat theirs.", ru:"Наша команда победила их."}, {en:"He was beaten in chess.", ru:"Он был побежден в шахматах."}] },
+                { v1: "bite", v2: "bit", v3: "bitten", ru: "кусать", 
+                  gaps: [ {s: "The mosquito ___ me.", a: "bit", w: ["bitten", "bited", "bites"]}, {s: "I have been ___.", a: "bitten", w: ["bit", "bited", "bites"]}, {s: "The dog ___ him yesterday.", a: "bit", w: ["bitten", "bited", "bites"]} ],
+                  examples: [{en:"Does your dog bite?", ru:"Твоя собака кусается?"}, {en:"The mosquito bit me.", ru:"Комар укусил меня."}, {en:"I've been bitten.", ru:"Меня укусили."}] },
+                { v1: "blow", v2: "blew", v3: "blown", ru: "дуть", 
+                  gaps: [ {s: "The wind ___ my hat off.", a: "blew", w: ["blown", "blowed", "blows"]}, {s: "The bridge was ___ up.", a: "blown", w: ["blew", "blowed", "blows"]}, {s: "He ___ out the candles.", a: "blew", w: ["blown", "blowed", "blows"]} ],
+                  examples: [{en:"Blow out the candles.", ru:"Задуй свечи."}, {en:"The wind blew my hat off.", ru:"Ветер сдул мою шляпу."}, {en:"The bridge was blown up.", ru:"Мост был взорван."}] },
+                { v1: "burst", v2: "burst", v3: "burst", ru: "разрывать(ся)", 
+                  gaps: [ {s: "He ___ into tears.", a: "burst", w: ["bursted", "barst", "bursts"]}, {s: "The dam has ___.", a: "burst", w: ["bursted", "barst", "bursts"]}, {s: "The balloon ___ suddenly.", a: "burst", w: ["bursted", "barst", "bursts"]} ],
+                  examples: [{en:"The pipe might burst.", ru:"Труба может лопнуть."}, {en:"He burst into tears.", ru:"Он разрыдался."}, {en:"The dam has burst.", ru:"Плотина прорвалась."}] },
+                { v1: "deal", v2: "dealt", v3: "dealt", ru: "раздавать", 
+                  gaps: [ {s: "She ___ with the problem.", a: "dealt", w: ["dealed", "dalt", "deals"]}, {s: "Cards were ___.", a: "dealt", w: ["dealed", "deal", "deals"]}, {s: "He ___ the cards.", a: "dealt", w: ["dealed", "dalt", "deals"]} ],
+                  examples: [{en:"Deal the cards.", ru:"Раздай карты."}, {en:"She dealt with the problem.", ru:"Она разобралась с проблемой."}, {en:"Cards were dealt.", ru:"Карты были розданы."}] },
+                { v1: "dig", v2: "dug", v3: "dug", ru: "копать(ся)", 
+                  gaps: [ {s: "They ___ a tunnel.", a: "dug", w: ["digged", "dag", "digs"]}, {s: "The treasure was ___ up.", a: "dug", w: ["digged", "dig", "digs"]}, {s: "He ___ a hole in the yard.", a: "dug", w: ["digged", "dag", "digs"]} ],
+                  examples: [{en:"Dig a hole.", ru:"Выкопай яму."}, {en:"They dug a tunnel.", ru:"Они прокопали туннель."}, {en:"The treasure was dug up.", ru:"Сокровище было выкопано."}] },
+                { v1: "feed", v2: "fed", v3: "fed", ru: "кормить", 
+                  gaps: [ {s: "She ___ the baby.", a: "fed", w: ["feeded", "fad", "feeds"]}, {s: "I am ___ up with this.", a: "fed", w: ["feeded", "feed", "feeds"]}, {s: "I ___ the cat yesterday.", a: "fed", w: ["feeded", "fad", "feeds"]} ],
+                  examples: [{en:"Feed the dog.", ru:"Покорми собаку."}, {en:"She fed the baby.", ru:"Она покормила ребенка."}, {en:"I am fed up.", ru:"Я сыт по горло."}] },
+                { v1: "fight", v2: "fought", v3: "fought", ru: "драться", 
+                  gaps: [ {s: "He ___ for his rights.", a: "fought", w: ["fighted", "fot", "fights"]}, {s: "The war was ___.", a: "fought", w: ["fighted", "fight", "fights"]}, {s: "They ___ bravely.", a: "fought", w: ["fighted", "fot", "fights"]} ],
+                  examples: [{en:"Don't fight.", ru:"Не деритесь."}, {en:"He fought for his rights.", ru:"Он боролся за свои права."}, {en:"The war was fought.", ru:"Война велась."}] },
+                { v1: "freeze", v2: "froze", v3: "frozen", ru: "замораживать", 
+                  gaps: [ {s: "I ___ in the cold.", a: "froze", w: ["frozen", "freezed", "freezes"]}, {s: "The lake is ___.", a: "frozen", w: ["froze", "freezed", "freezes"]}, {s: "The water ___ completely.", a: "froze", w: ["frozen", "freezed", "freezes"]} ],
+                  examples: [{en:"Water freezes at 0 degrees.", ru:"Вода замерзает при 0 градусов."}, {en:"I froze in the cold.", ru:"Я замерз на холоде."}, {en:"The lake is frozen.", ru:"Озеро замерзло."}] },
+                { v1: "hang", v2: "hung", v3: "hung", ru: "висеть", 
+                  gaps: [ {s: "She ___ her coat.", a: "hung", w: ["hanged", "hing", "hangs"]}, {s: "The keys are ___ on the hook.", a: "hung", w: ["hanged", "hang", "hangs"]}, {s: "He ___ the picture on the wall.", a: "hung", w: ["hanged", "hing", "hangs"]} ],
+                  examples: [{en:"Hang the painting here.", ru:"Повесь картину здесь."}, {en:"She hung her coat.", ru:"Она повесила пальто."}, {en:"The keys are hung on the hook.", ru:"Ключи повешены на крючок."}] },
+                { v1: "hide", v2: "hid", v3: "hidden", ru: "прятать(ся)", 
+                  gaps: [ {s: "He ___ the money.", a: "hid", w: ["hidden", "hided", "hides"]}, {s: "The treasure is ___.", a: "hidden", w: ["hid", "hided", "hides"]}, {s: "The boy ___ in the closet.", a: "hid", w: ["hidden", "hided", "hides"]} ],
+                  examples: [{en:"You can't hide.", ru:"Тебе не спрятаться."}, {en:"He hid the money.", ru:"Он спрятал деньги."}, {en:"The treasure is hidden.", ru:"Сокровище спрятано."}] },
+                { v1: "hit", v2: "hit", v3: "hit", ru: "ударять", 
+                  gaps: [ {s: "He ___ the wall.", a: "hit", w: ["hitted", "hat", "hits"]}, {s: "The target was ___.", a: "hit", w: ["hitted", "hat", "hits"]}, {s: "The ball ___ him in the face.", a: "hit", w: ["hitted", "hat", "hits"]} ],
+                  examples: [{en:"Hit the ball.", ru:"Ударь по мячу."}, {en:"He hit the wall.", ru:"Он ударил стену."}, {en:"The target was hit.", ru:"Цель была поражена."}] },
+                { v1: "lay", v2: "laid", v3: "laid", ru: "класть", 
+                  gaps: [ {s: "She ___ the baby in bed.", a: "laid", w: ["layed", "lain", "lays"]}, {s: "The table is ___.", a: "laid", w: ["layed", "lay", "lays"]}, {s: "He ___ the book down.", a: "laid", w: ["layed", "lain", "lays"]} ],
+                  examples: [{en:"Lay your weapons down.", ru:"Положите оружие."}, {en:"She laid the baby in bed.", ru:"Она уложила ребенка в постель."}, {en:"The table is laid.", ru:"Стол накрыт."}] },
+                { v1: "lead", v2: "led", v3: "led", ru: "руководить", 
+                  gaps: [ {s: "The path ___ to a forest.", a: "led", w: ["leaded", "lad", "leads"]}, {s: "He has ___ a good life.", a: "led", w: ["leaded", "lead", "leads"]}, {s: "She ___ the team to victory.", a: "led", w: ["leaded", "lad", "leads"]} ],
+                  examples: [{en:"Lead the way.", ru:"Веди."}, {en:"The path led to a forest.", ru:"Тропинка вела в лес."}, {en:"He has led a good life.", ru:"Он прожил хорошую жизнь."}] },
+                { v1: "lend", v2: "lent", v3: "lent", ru: "одалживать", 
+                  gaps: [ {s: "She ___ him some money.", a: "lent", w: ["lended", "land", "lends"]}, {s: "The car was ___ to me.", a: "lent", w: ["lended", "lend", "lends"]}, {s: "I ___ him $10.", a: "lent", w: ["lended", "land", "lends"]} ],
+                  examples: [{en:"Lend me your pen.", ru:"Одолжи мне ручку."}, {en:"She lent him some money.", ru:"Она одолжила ему немного денег."}, {en:"The car was lent to me.", ru:"Машину одолжили мне."}] },
+                { v1: "lie", v2: "lay", v3: "lain", ru: "лежать", 
+                  gaps: [ {s: "She ___ on the beach.", a: "lay", w: ["lied", "lain", "lies"]}, {s: "He has ___ there for hours.", a: "lain", w: ["lay", "lied", "lies"]}, {s: "He ___ on the grass.", a: "lay", w: ["lied", "lain", "lies"]} ],
+                  examples: [{en:"Lie down on the bed.", ru:"Ложись на кровать."}, {en:"She lay on the beach.", ru:"Она лежала на пляже."}, {en:"He has lain there for hours.", ru:"Он пролежал там часами."}] },
+                { v1: "ride", v2: "rode", v3: "ridden", ru: "ехать (верхом)", 
+                  gaps: [ {s: "He ___ a horse.", a: "rode", w: ["ridden", "rided", "rides"]}, {s: "I have never ___ a camel.", a: "ridden", w: ["rode", "rided", "rides"]}, {s: "I ___ my bike to school.", a: "rode", w: ["ridden", "rided", "rides"]} ],
+                  examples: [{en:"I ride a bike.", ru:"Я езжу на велосипеде."}, {en:"He rode a horse.", ru:"Он ехал на лошади."}, {en:"I have never ridden a camel.", ru:"Я никогда не ездил на верблюде."}] },
+                { v1: "ring", v2: "rang", v3: "rung", ru: "звенеть", 
+                  gaps: [ {s: "The phone ___ loudly.", a: "rang", w: ["rung", "ringed", "rings"]}, {s: "The alarm has ___.", a: "rung", w: ["rang", "ringed", "rings"]}, {s: "The bell ___.", a: "rang", w: ["rung", "ringed", "rings"]} ],
+                  examples: [{en:"Ring the bell.", ru:"Позвони в звонок."}, {en:"The phone rang.", ru:"Телефон зазвонил."}, {en:"The alarm has rung.", ru:"Будильник прозвенел."}] },
+                { v1: "seek", v2: "sought", v3: "sought", ru: "искать", 
+                  gaps: [ {s: "He ___ help.", a: "sought", w: ["seeked", "sok", "seeks"]}, {s: "Advice is highly ___.", a: "sought", w: ["seeked", "seek", "seeks"]}, {s: "They ___ shelter from the rain.", a: "sought", w: ["seeked", "sok", "seeks"]} ],
+                  examples: [{en:"Seek the truth.", ru:"Ищи правду."}, {en:"He sought help.", ru:"Он искал помощи."}, {en:"Advice is highly sought.", ru:"Совет очень востребован."}] },
+                { v1: "sell", v2: "sold", v3: "sold", ru: "продавать", 
+                  gaps: [ {s: "I ___ my old bike.", a: "sold", w: ["selled", "sald", "sells"]}, {s: "The house is ___.", a: "sold", w: ["selled", "sell", "sells"]}, {s: "He ___ his car.", a: "sold", w: ["selled", "sald", "sells"]} ],
+                  examples: [{en:"They sell fruits here.", ru:"Здесь продают фрукты."}, {en:"I sold my old bike.", ru:"Я продал старый велосипед."}, {en:"The house is sold.", ru:"Дом продан."}] },
+                { v1: "shake", v2: "shook", v3: "shaken", ru: "трясти", 
+                  gaps: [ {s: "The explosion ___ the house.", a: "shook", w: ["shaken", "shaked", "shakes"]}, {s: "I was ___ by the news.", a: "shaken", w: ["shook", "shaked", "shakes"]}, {s: "He ___ my hand.", a: "shook", w: ["shaken", "shaked", "shakes"]} ],
+                  examples: [{en:"Shake the bottle.", ru:"Встряхни бутылку."}, {en:"The explosion shook the house.", ru:"Взрыв потряс дом."}, {en:"I was shaken by the news.", ru:"Я был потрясен новостями."}] },
+                { v1: "shine", v2: "shone", v3: "shone", ru: "блестеть", 
+                  gaps: [ {s: "Her eyes ___ with joy.", a: "shone", w: ["shined", "shan", "shines"]}, {s: "The shoes are ___.", a: "shone", w: ["shined", "shine", "shines"]}, {s: "The sun ___ brightly.", a: "shone", w: ["shined", "shan", "shines"]} ],
+                  examples: [{en:"The stars shine at night.", ru:"Звезды светят ночью."}, {en:"Her eyes shone with joy.", ru:"Ее глаза сияли от радости."}, {en:"The shoes are shone.", ru:"Обувь начищена до блеска."}] },
+                { v1: "shoot", v2: "shot", v3: "shot", ru: "стрелять", 
+                  gaps: [ {s: "The hunter ___ a duck.", a: "shot", w: ["shooted", "shat", "shoots"]}, {s: "The movie was ___ in Paris.", a: "shot", w: ["shooted", "shoot", "shoots"]}, {s: "He ___ the target.", a: "shot", w: ["shooted", "shat", "shoots"]} ],
+                  examples: [{en:"Don't shoot!", ru:"Не стреляй!"}, {en:"The hunter shot a duck.", ru:"Охотник застрелил утку."}, {en:"The movie was shot in Paris.", ru:"Фильм был снят в Париже."}] },
+                { v1: "shut", v2: "shut", v3: "shut", ru: "закрывать", 
+                  gaps: [ {s: "He ___ his laptop.", a: "shut", w: ["shutted", "shat", "shuts"]}, {s: "The shop is ___.", a: "shut", w: ["shutted", "shuts", "shat"]}, {s: "I ___ the door.", a: "shut", w: ["shutted", "shuts", "shat"]} ],
+                  examples: [{en:"Shut the window.", ru:"Закрой окно."}, {en:"He shut his laptop.", ru:"Он закрыл ноутбук."}, {en:"The shop is shut.", ru:"Магазин закрыт."}] },
+                { v1: "smell", v2: "smelt", v3: "smelt", ru: "пахнуть", 
+                  gaps: [ {s: "The room ___ of smoke.", a: "smelt", w: ["smelled", "smalt", "smells"]}, {s: "The danger was ___.", a: "smelt", w: ["smelled", "smell", "smells"]}, {s: "It ___ terrible.", a: "smelt", w: ["smelled", "smalt", "smells"]} ],
+                  examples: [{en:"Smell these flowers.", ru:"Понюхай эти цветы."}, {en:"The room smelt of smoke.", ru:"Комната пахла дымом."}, {en:"The danger was smelt.", ru:"Опасность была почуяна."}] },
+                { v1: "steal", v2: "stole", v3: "stolen", ru: "воровать", 
+                  gaps: [ {s: "Someone ___ my car.", a: "stole", w: ["stolen", "stealed", "steals"]}, {s: "My wallet is ___.", a: "stolen", w: ["stole", "stealed", "steals"]}, {s: "He ___ my watch.", a: "stole", w: ["stolen", "stealed", "steals"]} ],
+                  examples: [{en:"Don't steal.", ru:"Не воруй."}, {en:"Someone stole my car.", ru:"Кто-то угнал мою машину."}, {en:"My wallet is stolen.", ru:"Мой кошелек украден."}] },
+                { v1: "sting", v2: "stung", v3: "stung", ru: "жечь/жалить", 
+                  gaps: [ {s: "A wasp ___ me.", a: "stung", w: ["stang", "stinged", "stings"]}, {s: "I was ___ by a nettle.", a: "stung", w: ["stang", "stinged", "sting"]}, {s: "A bee ___ him.", a: "stung", w: ["stang", "stinged", "stings"]} ],
+                  examples: [{en:"Bees sting.", ru:"Пчёлы жалят."}, {en:"A wasp stung me.", ru:"Меня ужалила оса."}, {en:"I was stung by a nettle.", ru:"Я обжёгся крапивой."}] },
+                { v1: "tear", v2: "tore", v3: "torn", ru: "разрывать", 
+                  gaps: [ {s: "She ___ the letter.", a: "tore", w: ["torn", "teared", "tears"]}, {s: "My jeans are ___.", a: "torn", w: ["tore", "teared", "tears"]}, {s: "I ___ my shirt.", a: "tore", w: ["torn", "teared", "tears"]} ],
+                  examples: [{en:"Don't tear the paper.", ru:"Не порви бумагу."}, {en:"She tore the letter.", ru:"Она порвала письмо."}, {en:"My jeans are torn.", ru:"Мои джинсы порваны."}] },
+                { v1: "throw", v2: "threw", v3: "thrown", ru: "кидать", 
+                  gaps: [ {s: "She ___ a stone.", a: "threw", w: ["thrown", "throwed", "throws"]}, {s: "The dice is ___.", a: "thrown", w: ["threw", "throwed", "throws"]}, {s: "He ___ the ball.", a: "threw", w: ["thrown", "throwed", "throws"]} ],
+                  examples: [{en:"Throw it away.", ru:"Выброси это."}, {en:"She threw a stone.", ru:"Она бросила камень."}, {en:"The dice is thrown.", ru:"Жребий брошен."}] },
+                { v1: "wear", v2: "wore", v3: "worn", ru: "носить", 
+                  gaps: [ {s: "He ___ a hat.", a: "wore", w: ["worn", "weared", "wears"]}, {s: "The shoes are ___ out.", a: "worn", w: ["wore", "weared", "wears"]}, {s: "She ___ a nice dress.", a: "wore", w: ["worn", "weared", "wears"]} ],
+                  examples: [{en:"I wear glasses.", ru:"Я ношу очки."}, {en:"He wore a hat.", ru:"Он носил шляпу."}, {en:"The shoes are worn out.", ru:"Ботинки износились."}] }
             ]
         };
 
@@ -350,13 +490,18 @@
         let score = { correct: 0, wrong: 0 };
         let questions = [];
         let currentIndex = 0;
+        let firstMatch = null;
+        let matchedCount = 0;
+        let selectedForms = [];
+        let matchTarget = 0;
+        let matchAdvance = 0;
+        let selectedGroupCard = null;
 
         // --- NAVIGATION ---
         function showView(viewId) {
             document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
             document.getElementById('view-' + viewId).classList.remove('hidden');
             
-            // Управление бейджем счета
             const badge = document.getElementById('score-badge');
             if (viewId === 'game' || viewId === 'dictionary') {
                 badge.classList.remove('hidden');
@@ -416,23 +561,27 @@
         function startGame(type) {
             currentExercise = type;
             currentIndex = 0;
-            // Берем до 10 случайных глаголов для сессии
-            questions = [...verbDB[currentLevel]].sort(() => Math.random() - 0.5).slice(0, 10);
+            // Берем 10 случайных глаголов из 30 возможных, у каждого сбрасываем выбранный gap
+            questions = [...verbDB[currentLevel]].sort(() => Math.random() - 0.5).slice(0, 10).map(v => ({...v, currentGap: null}));
             resetScore();
             showView('game');
             renderQuestion();
         }
 
         function renderQuestion() {
+            firstMatch = null;
+            matchedCount = 0;
+            selectedForms = [];
+            selectedGroupCard = null;
+            window.groupGameNeeded = null;
+            
             const verb = questions[currentIndex];
             const container = document.getElementById('game-content');
             
-            // Progress Update
             const progress = ((currentIndex) / questions.length) * 100;
             document.getElementById('game-progress').style.width = progress + '%';
             document.getElementById('game-step').innerText = `${currentIndex + 1}/${questions.length}`;
 
-            // Сброс классов анимации/цветов
             container.className = "bg-white p-6 sm:p-10 rounded-[2.5rem] border border-slate-100 soft-shadow transition-colors duration-300 relative overflow-hidden";
 
             if (currentExercise === 'fill_forms') {
@@ -449,16 +598,19 @@
                         <button onclick="checkFillForms()" class="w-full py-5 bg-slate-800 text-white font-extrabold rounded-2xl hover:bg-indigo-600 hover:-translate-y-1 transition-all shadow-lg hover:shadow-indigo-200">Проверить ответ</button>
                     </div>
                 `;
-                // Автофокус на первый инпут для ПК
                 setTimeout(() => { if(window.innerWidth > 768) document.getElementById('input-v2').focus(); }, 100);
             } 
             else if (currentExercise === 'fill_gap') {
-                const options = shuffle([verb.gapAnswer, ...verb.wrong]);
+                if (!verb.currentGap) {
+                    verb.currentGap = verb.gaps[Math.floor(Math.random() * verb.gaps.length)];
+                }
+                const gapObj = verb.currentGap;
+                const options = shuffle([gapObj.a, ...gapObj.w]);
                 container.innerHTML = `
                     <div class="text-center animate-fade-in">
                         <div class="inline-block bg-orange-50 text-orange-500 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-widest mb-6">Вставь слово</div>
                         <h3 class="text-2xl sm:text-3xl font-medium mb-12 text-slate-700 leading-relaxed">
-                            "${verb.sentence.replace('___', '<span class="text-indigo-600 font-black border-b-4 border-indigo-300 px-3 mx-1">...</span>')}"
+                            "${gapObj.s.replace('___', '<span class="text-indigo-600 font-black border-b-4 border-indigo-300 px-3 mx-1">...</span>')}"
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             ${options.map(opt => `<button onclick="checkGap('${opt}')" class="p-5 bg-white border-2 border-slate-200 rounded-2xl font-extrabold text-lg text-slate-700 hover:border-indigo-400 hover:bg-indigo-50 hover:text-indigo-700 transition-all shadow-sm hover:shadow-md hover:-translate-y-1">${opt}</button>`).join('')}
@@ -480,9 +632,10 @@
                 `;
             }
             else if (currentExercise === 'match') {
-                const currentPool = questions.slice(0, 5);
+                const currentPool = questions.slice(currentIndex, currentIndex + 5);
+                matchTarget = currentPool.length * 2;
+                matchAdvance = currentPool.length - 1;
                 
-                // Для каждой английской карточки выбираем случайную форму (V1, V2 или V3)
                 const engs = currentPool.map(v => {
                     const forms = [v.v1, v.v2, v.v3];
                     const randomForm = forms[Math.floor(Math.random() * forms.length)];
@@ -497,10 +650,88 @@
                         <div class="inline-block bg-pink-50 text-pink-500 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-widest mb-6">Найди пары</div>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" id="match-grid">
                             ${cards.map((c, i) => `
-                                <button onclick="handleMatch(this, '${c.pair}', '${c.type}')" class="match-card p-4 sm:p-6 bg-white border-2 border-slate-200 rounded-2xl font-bold text-sm sm:text-lg min-h-[80px] sm:min-h-[100px] flex items-center justify-center transition-all hover:border-indigo-300 hover:shadow-md text-slate-700 shadow-sm">
+                                <button onclick="handleMatch(this, '${c.pair}', '${c.type}')" class="match-card p-4 sm:p-6 bg-white border-2 border-slate-200 rounded-2xl font-bold text-sm sm:text-lg min-h-[80px] sm:min-h-[100px] flex items-center justify-center transition-all hover:border-indigo-300 hover:shadow-md text-slate-700 shadow-sm break-words">
                                     ${c.text}
                                 </button>
                             `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            else if (currentExercise === 'match_forms') {
+                const currentPool = questions.slice(currentIndex, currentIndex + 5);
+                matchTarget = currentPool.length * 4;
+                matchAdvance = currentPool.length - 1;
+                
+                let cards = [];
+                currentPool.forEach(v => {
+                    cards.push({ text: v.v1, pair: v.v1, type: 'v1' });
+                    cards.push({ text: v.v2, pair: v.v1, type: 'v2' });
+                    cards.push({ text: v.v3, pair: v.v1, type: 'v3' });
+                    cards.push({ text: v.ru, pair: v.v1, type: 'ru' });
+                });
+                cards = shuffle(cards);
+                
+                container.innerHTML = `
+                    <div class="text-center animate-fade-in">
+                        <div class="inline-block bg-purple-50 text-purple-500 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-widest mb-4">Собери квартеты</div>
+                        <p class="text-slate-500 mb-6 font-medium text-sm sm:text-base">Найди и выдели 3 формы глагола + его перевод</p>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3" id="match-forms-grid">
+                            ${cards.map((c, i) => `
+                                <button onclick="handleMatchForms(this, '${c.pair}')" class="match-form-card p-2 sm:p-3 bg-white border-2 border-slate-200 rounded-xl font-bold text-xs sm:text-sm md:text-base min-h-[60px] sm:min-h-[70px] flex items-center justify-center transition-all hover:border-purple-300 hover:shadow-md text-slate-700 shadow-sm break-words">
+                                    ${c.text}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            else if (currentExercise === 'group_forms') {
+                const currentPool = questions.slice(currentIndex, currentIndex + 5);
+                matchTarget = currentPool.length * 3; // 5 глаголов по 3 формы (15 слов)
+                matchAdvance = currentPool.length - 1;
+                
+                let words = [];
+                currentPool.forEach(v => {
+                    words.push({ text: v.v1, type: 'v1' });
+                    words.push({ text: v.v2, type: 'v2' });
+                    words.push({ text: v.v3, type: 'v3' });
+                });
+                words = shuffle(words);
+                
+                // Track remaining words needed per column
+                window.groupGameNeeded = {
+                    v1: currentPool.map(v => v.v1),
+                    v2: currentPool.map(v => v.v2),
+                    v3: currentPool.map(v => v.v3)
+                };
+
+                container.innerHTML = `
+                    <div class="text-center animate-fade-in">
+                        <div class="inline-block bg-teal-50 text-teal-600 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-widest mb-4">Сортировка</div>
+                        <p class="text-slate-500 mb-6 font-medium text-sm sm:text-base">Разделите глаголы на группы (Кликните на слово, а затем на колонку)</p>
+                        
+                        <div id="word-bank" class="flex flex-wrap justify-center gap-2 sm:gap-3 p-4 sm:p-5 bg-slate-50 rounded-2xl border border-slate-200 min-h-[120px]">
+                            ${words.map((w, i) => `
+                                <button onclick="selectGroupCard(this, '${w.text.replace(/'/g, "\\'")}')" class="group-card px-3 sm:px-4 py-2 bg-white border-2 border-slate-200 rounded-xl font-bold text-sm sm:text-base text-slate-700 transition-all shadow-sm hover:border-teal-300">
+                                    ${w.text}
+                                </button>
+                            `).join('')}
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4 mt-6">
+                            <div class="flex flex-col" onclick="placeInGroup('v1')">
+                                <div class="bg-indigo-100 text-indigo-700 text-xs sm:text-sm font-bold text-center py-2 rounded-t-xl border-2 border-b-0 border-indigo-100">V1 (Present)</div>
+                                <div id="group-col-v1" class="flex-1 bg-slate-50/50 rounded-b-xl border-2 border-dashed border-slate-200 p-2 min-h-[150px] flex flex-col items-center gap-2 cursor-pointer hover:bg-indigo-50 transition-colors"></div>
+                            </div>
+                            <div class="flex flex-col" onclick="placeInGroup('v2')">
+                                <div class="bg-amber-100 text-amber-700 text-xs sm:text-sm font-bold text-center py-2 rounded-t-xl border-2 border-b-0 border-amber-100">V2 (Past)</div>
+                                <div id="group-col-v2" class="flex-1 bg-slate-50/50 rounded-b-xl border-2 border-dashed border-slate-200 p-2 min-h-[150px] flex flex-col items-center gap-2 cursor-pointer hover:bg-amber-50 transition-colors"></div>
+                            </div>
+                            <div class="flex flex-col" onclick="placeInGroup('v3')">
+                                <div class="bg-rose-100 text-rose-700 text-xs sm:text-sm font-bold text-center py-2 rounded-t-xl border-2 border-b-0 border-rose-100">V3 (Participle)</div>
+                                <div id="group-col-v3" class="flex-1 bg-slate-50/50 rounded-b-xl border-2 border-dashed border-slate-200 p-2 min-h-[150px] flex flex-col items-center gap-2 cursor-pointer hover:bg-rose-50 transition-colors"></div>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -521,19 +752,16 @@
         }
 
         function checkGap(ans) {
-            handleResult(ans === questions[currentIndex].gapAnswer);
+            handleResult(ans === questions[currentIndex].currentGap.a);
         }
 
         function checkTranslate(v1) {
             handleResult(v1 === questions[currentIndex].v1);
         }
 
-        let firstMatch = null;
-        let matchedCount = 0;
         function handleMatch(btn, pair, type) {
             if (btn.classList.contains('opacity-0') || btn.classList.contains('active-match')) return;
 
-            // Выделение при клике
             btn.classList.add('active-match', 'bg-indigo-50', 'border-indigo-400', 'text-indigo-700', 'scale-[1.02]', 'shadow-md');
             btn.classList.remove('bg-white', 'border-slate-200');
 
@@ -541,7 +769,6 @@
                 firstMatch = { btn, pair, type };
             } else {
                 if (firstMatch.pair === pair && firstMatch.type !== type) {
-                    // Правильно
                     setTimeout(() => {
                         firstMatch.btn.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
                         btn.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
@@ -550,12 +777,11 @@
                     matchedCount += 2;
                     updateScore(true);
                     
-                    if (matchedCount === (questions.slice(0,5).length * 2)) {
-                        matchedCount = 0;
+                    if (matchedCount === matchTarget) {
+                        currentIndex += matchAdvance;
                         setTimeout(nextQuestion, 800);
                     }
                 } else {
-                    // Ошибка
                     const b1 = firstMatch.btn;
                     const b2 = btn;
                     
@@ -579,17 +805,113 @@
             }
         }
 
+        function handleMatchForms(btn, pair) {
+            if (btn.classList.contains('opacity-0') || btn.classList.contains('active-form-match')) return;
+
+            btn.classList.add('active-form-match', 'bg-purple-50', 'border-purple-400', 'text-purple-700', 'scale-[1.02]', 'shadow-md');
+            btn.classList.remove('bg-white', 'border-slate-200');
+
+            selectedForms.push({ btn, pair });
+
+            if (selectedForms.length === 4) {
+                const allSame = selectedForms.every(item => item.pair === selectedForms[0].pair);
+                
+                if (allSame) {
+                    selectedForms.forEach(item => {
+                        setTimeout(() => {
+                            item.btn.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+                        }, 300);
+                    });
+                    
+                    matchedCount += 4;
+                    updateScore(true);
+                    
+                    if (matchedCount === matchTarget) {
+                        currentIndex += matchAdvance;
+                        setTimeout(nextQuestion, 800);
+                    }
+                } else {
+                    const errorCards = [...selectedForms];
+                    errorCards.forEach(item => {
+                        item.btn.classList.remove('bg-purple-50', 'border-purple-400', 'text-purple-700');
+                        item.btn.classList.add('shake', 'bg-rose-50', 'border-rose-400', 'text-rose-600');
+                    });
+                    
+                    updateScore(false);
+                    
+                    setTimeout(() => {
+                        errorCards.forEach(item => {
+                            item.btn.classList.remove('active-form-match', 'shake', 'bg-rose-50', 'border-rose-400', 'text-rose-600', 'scale-[1.02]', 'shadow-md');
+                            item.btn.classList.add('bg-white', 'border-slate-200');
+                        });
+                    }, 600);
+                }
+                selectedForms = [];
+            }
+        }
+
+        function selectGroupCard(btn, text) {
+            if (btn.classList.contains('placed')) return;
+            
+            document.querySelectorAll('.group-card:not(.placed)').forEach(c => {
+                c.classList.remove('ring-4', 'ring-teal-300', 'scale-110', 'border-teal-400');
+            });
+            
+            selectedGroupCard = { btn, text };
+            btn.classList.add('ring-4', 'ring-teal-300', 'scale-110', 'border-teal-400');
+        }
+
+        function placeInGroup(colType) {
+            if (!selectedGroupCard) return;
+            
+            const needed = window.groupGameNeeded[colType];
+            const textIdx = needed.indexOf(selectedGroupCard.text);
+            const btn = selectedGroupCard.btn;
+            
+            if (textIdx !== -1) {
+                // Правильно угадал колонку
+                needed.splice(textIdx, 1);
+                
+                btn.classList.remove('ring-4', 'ring-teal-300', 'scale-110', 'border-teal-400', 'bg-white', 'border-slate-200');
+                btn.classList.add('placed', 'bg-white', 'border-2', 'border-emerald-200', 'text-emerald-700', 'pointer-events-none', 'w-full', 'shadow-sm', 'animate-fade-in');
+                
+                btn.onclick = null;
+                
+                const colContainer = document.getElementById('group-col-' + colType);
+                colContainer.appendChild(btn);
+                
+                selectedGroupCard = null;
+                matchedCount++;
+                updateScore(true);
+                
+                if (matchedCount === matchTarget) {
+                    currentIndex += matchAdvance;
+                    setTimeout(nextQuestion, 800);
+                }
+            } else {
+                // Ошибка
+                btn.classList.remove('ring-4', 'ring-teal-300', 'scale-110', 'border-teal-400');
+                btn.classList.add('shake', 'bg-rose-50', 'border-rose-400', 'text-rose-600');
+                updateScore(false);
+                
+                selectedGroupCard = null;
+                setTimeout(() => {
+                    btn.classList.remove('shake', 'bg-rose-50', 'border-rose-400', 'text-rose-600');
+                    if(!btn.classList.contains('placed')) {
+                         btn.classList.add('bg-white', 'border-slate-200', 'text-slate-700');
+                    }
+                }, 600);
+            }
+        }
+
         function handleResult(isCorrect) {
             const card = document.getElementById('game-content');
-            // Убираем старые классы если были
             card.classList.remove('border-slate-100', 'border-emerald-400', 'bg-emerald-50', 'shake', 'border-rose-400', 'bg-rose-50');
 
             if (isCorrect) {
                 card.classList.add('border-emerald-400', 'bg-emerald-50');
                 updateScore(true);
-                setTimeout(() => {
-                    nextQuestion();
-                }, 800);
+                setTimeout(() => { nextQuestion(); }, 800);
             } else {
                 card.classList.add('shake', 'border-rose-400', 'bg-rose-50');
                 updateScore(false);
@@ -610,7 +932,6 @@
             cCount.innerText = score.correct;
             wCount.innerText = score.wrong;
             
-            // Анимация при изменении счета
             const el = isCorrect ? cCount : wCount;
             el.parentElement.classList.add('scale-110');
             setTimeout(() => el.parentElement.classList.remove('scale-110'), 200);
@@ -621,7 +942,6 @@
                 currentIndex++;
                 renderQuestion();
             } else {
-                // Докручиваем прогресс-бар до конца перед показом результатов
                 document.getElementById('game-progress').style.width = '100%';
                 setTimeout(showResults, 500);
             }
@@ -633,7 +953,6 @@
             document.getElementById('res-wrong').innerText = score.wrong;
         }
 
-        // --- UTILS ---
         function shuffle(array) {
             return array.sort(() => Math.random() - 0.5);
         }
@@ -643,4 +962,3 @@
     </script>
 </body>
 </html>
-```
